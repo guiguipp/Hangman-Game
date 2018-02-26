@@ -10,10 +10,17 @@
     <title>The Great Coding Flashcard Game</title>
 </head>
 <body>
-    <p id="element_name">Name:  </p>
-    <p id="element_definition"> Definition: </p>
-    <p id="element_url">url: </p>
-    <p id="element_example">Example: </p>
- 
+    <p>Name: <span id="element_name"></span></p> 
+    <p>Definition: <span id="element_definition"> </span></p>
+    <p>URL: <span id="element_url"></span></p>
+    <p> Example: <span id="element_example"></span></p>
+
+    <script>
+        document.querySelector("#element_name").innerHTML= randomHtml.name
+        document.querySelector("#element_definition").innerHTML= randomHtml.definition
+        document.querySelector("#element_url").innerHTML= randomHtml.url    
+        document.querySelector("#element_example").innerHTML= randomHtml.example
+    </script>
+
 </body>
 </html>

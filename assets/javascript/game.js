@@ -341,12 +341,10 @@ let randomCss = cssArray[Math.floor(Math.random()*cssArray.length)];
 
 // HTML Game
 console.log(randomHtml);
-document.write(randomHtml.name);
 
 var keys = Object.keys(randomHtml);
 console.log(randomHtml.name);
 
-document.getElementById('element_name').innerText += ', world';
 
 /* <p id="element_name"></p>
 <p id="element_definition"></p>
