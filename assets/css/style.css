@@ -1,0 +1,14 @@
+p.example {
+    font-size: 20px;
+    text-align: center;
+    padding-top: 35px;
+    color: purple;
+}
+span.bracket {
+    color: green;
+}
+div.box {
+    background-color: black;
+    width: 200px;
+    height: 100px;
+}

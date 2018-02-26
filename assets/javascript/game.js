@@ -1,108 +1,108 @@
 // HTML Attributes Database 
-const a = {name: "a", type: "HTML", example: "<a>", definition: "Defines a hyperlink", url: "<a href=\"https://www.w3schools.com/tags/tag_a.asp\">"};
-const abbr = {name: "abbr", type: "HTML", example: "<abbr>", definition: "Defines an abbreviation or an acronym", url: "<a href=\"https://www.w3schools.com/tags/tag_abbr.asp\">"};
-const address = {name: "address", type: "HTML", example: "<address>", definition: "Defines contact information for the author/owner of a document", url: "<a href=\"https://www.w3schools.com/tags/tag_address.asp\">"};
-const area = {name: "area", type: "HTML", example: "<area>", definition: "Defines an area inside an image-map", url: "<a href=\"https://www.w3schools.com/tags/tag_area.asp\">"};
-const article = {name: "article", type: "HTML", example: "<article>", definition: "Defines an article", url: "<a href=\"https://www.w3schools.com/tags/tag_article.asp\">"};
-const aside = {name: "aside", type: "HTML", example: "<aside>", definition: "Defines content aside from the page content", url: "<a href=\"https://www.w3schools.com/tags/tag_aside.asp\">"};
-const audio = {name: "audio", type: "HTML", example: "<audio>", definition: "Defines sound content", url: "<a href=\"https://www.w3schools.com/tags/tag_audio.asp\">"};
-const b = {name: "b", type: "HTML", example: "<b>", definition: "Defines bold text", url: "<a href=\"https://www.w3schools.com/tags/tag_b.asp\">"};
-const base = {name: "base", type: "HTML", example: "<base>", definition: "Specifies the base URL/target for all relative URLs in a document", url: "<a href=\"https://www.w3schools.com/tags/tag_base.asp\">"};
-const bdi = {name: "bdi", type: "HTML", example: "<bdi>", definition: "Isolates a part of text that might be formatted in a different direction from other text outside it", url: "<a href=\"https://www.w3schools.com/tags/tag_bdi.asp\">"};
-const bdo = {name: "bdo", type: "HTML", example: "<bdo>", definition: "Overrides the current text direction", url: "<a href=\"https://www.w3schools.com/tags/tag_bdo.asp\">"};
-const blockquote = {name: "blockquote", type: "HTML", example: "<blockquote>", definition: "Defines a section that is quoted from another source", url: "<a href=\"https://www.w3schools.com/tags/tag_blockquote.asp\">"};
-const body = {name: "body", type: "HTML", example: "<body>", definition: "Defines the document's body", url: "<a href=\"https://www.w3schools.com/tags/tag_body.asp\">"};
-const br = {name: "br", type: "HTML", example: "<br>", definition: "Defines a single line break", url: "<a href=\"https://www.w3schools.com/tags/tag_br.asp\">"};
-const button = {name: "button", type: "HTML", example: "<button>", definition: "Defines a clickable button", url: "<a href=\"https://www.w3schools.com/tags/tag_button.asp\">"};
-const canvas = {name: "canvas", type: "HTML", example: "<canvas>", definition: "Used to draw graphics, on the fly, via scripting (usually JavaScript)", url: "<a href=\"https://www.w3schools.com/tags/tag_canvas.asp\">"};
-const caption = {name: "caption", type: "HTML", example: "<caption>", definition: "Defines a table caption", url: "<a href=\"https://www.w3schools.com/tags/tag_caption.asp\">"};
-const cite = {name: "cite", type: "HTML", example: "<cite>", definition: "Defines the title of a work", url: "<a href=\"https://www.w3schools.com/tags/tag_cite.asp\">"};
-const code = {name: "code", type: "HTML", example: "<code>", definition: "Defines a piece of computer code", url: "<a href=\"https://www.w3schools.com/tags/tag_code.asp\">"};
-const col = {name: "col", type: "HTML", example: "<col>", definition: "Specifies column properties for each column within a <colgroup> element", url: "<a href=\"https://www.w3schools.com/tags/tag_col.asp\">"};
-const colgroup = {name: "colgroup", type: "HTML", example: "<colgroup>", definition: "Specifies a group of one or more columns in a table for formatting", url: "<a href=\"https://www.w3schools.com/tags/tag_colgroup.asp\">"};
-const datalist = {name: "datalist", type: "HTML", example: "<datalist>", definition: "Specifies a list of pre-defined options for input controls", url: "<a href=\"https://www.w3schools.com/tags/tag_datalist.asp\">"};
-const dd = {name: "dd", type: "HTML", example: "<dd>", definition: "Defines a description/value of a term in a description list", url: "<a href=\"https://www.w3schools.com/tags/tag_dd.asp\">"};
-const del = {name: "del", type: "HTML", example: "<del>", definition: "Defines text that has been deleted from a document", url: "<a href=\"https://www.w3schools.com/tags/tag_del.asp\">"};
-const details = {name: "details", type: "HTML", example: "<details>", definition: "Defines additional details that the user can view or hide", url: "<a href=\"https://www.w3schools.com/tags/tag_details.asp\">"};
-const dfn = {name: "dfn", type: "HTML", example: "<dfn>", definition: "Represents the defining instance of a term", url: "<a href=\"https://www.w3schools.com/tags/tag_dfn.asp\">"};
-const dialog = {name: "dialog", type: "HTML", example: "<dialog>", definition: "Defines a dialog box or window", url: "<a href=\"https://www.w3schools.com/tags/tag_dialog.asp\">"};
-const div = {name: "div", type: "HTML", example: "<div>", definition: "Defines a section in a document", url: "<a href=\"https://www.w3schools.com/tags/tag_div.asp\">"};
-const dl = {name: "dl", type: "HTML", example: "<dl>", definition: "Defines a description list", url: "<a href=\"https://www.w3schools.com/tags/tag_dl.asp\">"};
-const dt = {name: "dt", type: "HTML", example: "<dt>", definition: "Defines a term/name in a description list", url: "<a href=\"https://www.w3schools.com/tags/tag_dt.asp\">"};
-const em = {name: "em", type: "HTML", example: "<em>", definition: "Defines emphasized text", url: "<a href=\"https://www.w3schools.com/tags/tag_em.asp\">"};
-const embed = {name: "embed", type: "HTML", example: "<embed>", definition: "Defines a container for an external (non-HTML) application", url: "<a href=\"https://www.w3schools.com/tags/tag_embed.asp\">"};
-const fieldset = {name: "fieldset", type: "HTML", example: "<fieldset>", definition: "Groups related elements in a form", url: "<a href=\"https://www.w3schools.com/tags/tag_fieldset.asp\">"};
-const figcaption = {name: "figcaption", type: "HTML", example: "<figcaption>", definition: "Defines a caption for a <figure> element", url: "<a href=\"https://www.w3schools.com/tags/tag_figcaption.asp\">"};
-const figure = {name: "figure", type: "HTML", example: "<figure>", definition: "Specifies self-contained content", url: "<a href=\"https://www.w3schools.com/tags/tag_figure.asp\">"};
-const footer = {name: "footer", type: "HTML", example: "<footer>", definition: "Defines a footer for a document or section", url: "<a href=\"https://www.w3schools.com/tags/tag_footer.asp\">"};
-const form = {name: "form", type: "HTML", example: "<form>", definition: "Defines an HTML form for user input", url: "<a href=\"https://www.w3schools.com/tags/tag_form.asp\">"};
-const head = {name: "head", type: "HTML", example: "<head>", definition: "Defines information about the document", url: "<a href=\"https://www.w3schools.com/tags/tag_head.asp\">"};
-const header = {name: "header", type: "HTML", example: "<header>", definition: "Defines a header for a document or section", url: "<a href=\"https://www.w3schools.com/tags/tag_header.asp\">"};
-const hr = {name: "hr", type: "HTML", example: "<hr>", definition: "Defines a thematic change in the content", url: "<a href=\"https://www.w3schools.com/tags/tag_hn.asp\">"};
-const html = {name: "html", type: "HTML", example: "<html>", definition: "Defines the root of an HTML document", url: "<a href=\"https://www.w3schools.com/tags/tag_hr.asp\">"};
-const i = {name: "i", type: "HTML", example: "<i>", definition: "Defines a part of text in an alternate voice or mood", url: "<a href=\"https://www.w3schools.com/tags/tag_html.asp\">"};
-const iframe = {name: "iframe", type: "HTML", example: "<iframe>", definition: "Defines an inline frame", url: "<a href=\"https://www.w3schools.com/tags/tag_i.asp\">"};
-const img = {name: "img", type: "HTML", example: "<img>", definition: "Defines an image", url: "<a href=\"https://www.w3schools.com/tags/tag_iframe.asp\">"};
-const input = {name: "input", type: "HTML", example: "<input>", definition: "Defines an input control", url: "<a href=\"https://www.w3schools.com/tags/tag_img.asp\">"};
-const ins = {name: "ins", type: "HTML", example: "<ins>", definition: "Defines a text that has been inserted into a document", url: "<a href=\"https://www.w3schools.com/tags/tag_input.asp\">"};
-const kbd = {name: "kbd", type: "HTML", example: "<kbd>", definition: "Defines keyboard input", url: "<a href=\"https://www.w3schools.com/tags/tag_ins.asp\">"};
-const label = {name: "label", type: "HTML", example: "<label>", definition: "Defines a label for an <input> element", url: "<a href=\"https://www.w3schools.com/tags/tag_kbd.asp\">"};
-const legend = {name: "legend", type: "HTML", example: "<legend>", definition: "Defines a caption for a <fieldset> element", url: "<a href=\"https://www.w3schools.com/tags/tag_label.asp\">"};
-const li = {name: "li", type: "HTML", example: "<li>", definition: "Defines a list item", url: "<a href=\"https://www.w3schools.com/tags/tag_legend.asp\">"};
-const link = {name: "link", type: "HTML", example: "<link>", definition: "Defines the relationship between a document and an external resource (most used to link to style sheets)", url: "<a href=\"https://www.w3schools.com/tags/tag_li.asp\">"};
-const main = {name: "main", type: "HTML", example: "<main>", definition: "Specifies the main content of a document", url: "<a href=\"https://www.w3schools.com/tags/tag_link.asp\">"};
-const map = {name: "map", type: "HTML", example: "<map>", definition: "Defines a client-side image-map", url: "<a href=\"https://www.w3schools.com/tags/tag_main.asp\">"};
-const mark = {name: "mark", type: "HTML", example: "<mark>", definition: "Defines marked/highlighted text", url: "<a href=\"https://www.w3schools.com/tags/tag_map.asp\">"};
-const menu = {name: "menu", type: "HTML", example: "<menu>", definition: "Defines a list/menu of commands", url: "<a href=\"https://www.w3schools.com/tags/tag_mark.asp\">"};
-const menuitem = {name: "menuitem", type: "HTML", example: "<menuitem>", definition: "Defines a command/menu item that the user can invoke from a popup menu", url: "<a href=\"https://www.w3schools.com/tags/tag_menu.asp\">"};
-const meta = {name: "meta", type: "HTML", example: "<meta>", definition: "Defines metadata about an HTML document", url: "<a href=\"https://www.w3schools.com/tags/tag_menuitem.asp\">"};
-const meter = {name: "meter", type: "HTML", example: "<meter>", definition: "Defines a scalar measurement within a known range (a gauge)", url: "<a href=\"https://www.w3schools.com/tags/tag_meta.asp\">"};
-const nav = {name: "nav", type: "HTML", example: "<nav>", definition: "Defines navigation links", url: "<a href=\"https://www.w3schools.com/tags/tag_meter.asp\">"};
-const noscript = {name: "noscript", type: "HTML", example: "<noscript>", definition: "Defines an alternate content for users that do not support client-side scripts", url: "<a href=\"https://www.w3schools.com/tags/tag_nav.asp\">"};
-const object = {name: "object", type: "HTML", example: "<object>", definition: "Defines an embedded object", url: "<a href=\"https://www.w3schools.com/tags/tag_noscript.asp\">"};
-const ol = {name: "ol", type: "HTML", example: "<ol>", definition: "Defines an ordered list", url: "<a href=\"https://www.w3schools.com/tags/tag_object.asp\">"};
-const optgroup = {name: "optgroup", type: "HTML", example: "<optgroup>", definition: "Defines a group of related options in a drop-down list", url: "<a href=\"https://www.w3schools.com/tags/tag_ol.asp\">"};
-const option = {name: "option", type: "HTML", example: "<option>", definition: "Defines an option in a drop-down list", url: "<a href=\"https://www.w3schools.com/tags/tag_optgroup.asp\">"};
-const output = {name: "output", type: "HTML", example: "<output>", definition: "Defines the result of a calculation", url: "<a href=\"https://www.w3schools.com/tags/tag_option.asp\">"};
-const p = {name: "p", type: "HTML", example: "<p>", definition: "Defines a paragraph", url: "<a href=\"https://www.w3schools.com/tags/tag_output.asp\">"};
-const param = {name: "param", type: "HTML", example: "<param>", definition: "Defines a parameter for an object", url: "<a href=\"https://www.w3schools.com/tags/tag_p.asp\">"};
-const picture = {name: "picture", type: "HTML", example: "<picture>", definition: "Defines a container for multiple image resources", url: "<a href=\"https://www.w3schools.com/tags/tag_param.asp\">"};
-const pre = {name: "pre", type: "HTML", example: "<pre>", definition: "Defines preformatted text", url: "<a href=\"https://www.w3schools.com/tags/tag_picture.asp\">"};
-const progress = {name: "progress", type: "HTML", example: "<progress>", definition: "Represents the progress of a task", url: "<a href=\"https://www.w3schools.com/tags/tag_pre.asp\">"};
-const q = {name: "q", type: "HTML", example: "<q>", definition: "Defines a short quotation", url: "<a href=\"https://www.w3schools.com/tags/tag_progress.asp\">"};
-const rp = {name: "rp", type: "HTML", example: "<rp>", definition: "Defines what to show in browsers that do not support ruby annotations", url: "<a href=\"https://www.w3schools.com/tags/tag_q.asp\">"};
-const rt = {name: "rt", type: "HTML", example: "<rt>", definition: "Defines an explanation/pronunciation of characters (for East Asian typography)", url: "<a href=\"https://www.w3schools.com/tags/tag_rp.asp\">"};
-const ruby = {name: "ruby", type: "HTML", example: "<ruby>", definition: "Defines a ruby annotation (for East Asian typography)", url: "<a href=\"https://www.w3schools.com/tags/tag_rt.asp\">"};
-const s = {name: "s", type: "HTML", example: "<s>", definition: "Defines text that is no longer correct", url: "<a href=\"https://www.w3schools.com/tags/tag_ruby.asp\">"};
-const samp = {name: "samp", type: "HTML", example: "<samp>", definition: "Defines sample output from a computer program", url: "<a href=\"https://www.w3schools.com/tags/tag_s.asp\">"};
-const script = {name: "script", type: "HTML", example: "<script>", definition: "Defines a client-side script", url: "<a href=\"https://www.w3schools.com/tags/tag_samp.asp\">"};
-const section = {name: "section", type: "HTML", example: "<section>", definition: "Defines a section in a document", url: "<a href=\"https://www.w3schools.com/tags/tag_script.asp\">"};
-const select = {name: "select", type: "HTML", example: "<select>", definition: "Defines a drop-down list", url: "<a href=\"https://www.w3schools.com/tags/tag_section.asp\">"};
-const small = {name: "small", type: "HTML", example: "<small>", definition: "Defines smaller text", url: "<a href=\"https://www.w3schools.com/tags/tag_select.asp\">"};
-const source = {name: "source", type: "HTML", example: "<source>", definition: "Defines multiple media resources for media elements (<video> and <audio>)", url: "<a href=\"https://www.w3schools.com/tags/tag_small.asp\">"};
-const span = {name: "span", type: "HTML", example: "<span>", definition: "Defines a section in a document", url: "<a href=\"https://www.w3schools.com/tags/tag_source.asp\">"};
-const strong = {name: "strong", type: "HTML", example: "<strong>", definition: "Defines important text", url: "<a href=\"https://www.w3schools.com/tags/tag_span.asp\">"};
-const style = {name: "style", type: "HTML", example: "<style>", definition: "Defines style information for a document", url: "<a href=\"https://www.w3schools.com/tags/tag_strong.asp\">"};
-const sub = {name: "sub", type: "HTML", example: "<sub>", definition: "Defines subscripted text", url: "<a href=\"https://www.w3schools.com/tags/tag_style.asp\">"};
-const summary = {name: "summary", type: "HTML", example: "<summary>", definition: "Defines a visible heading for a <details> element", url: "<a href=\"https://www.w3schools.com/tags/tag_sub.asp\">"};
-const sup = {name: "sup", type: "HTML", example: "<sup>", definition: "Defines superscripted text", url: "<a href=\"https://www.w3schools.com/tags/tag_summary.asp\">"};
-const table = {name: "table", type: "HTML", example: "<table>", definition: "Defines a table", url: "<a href=\"https://www.w3schools.com/tags/tag_sup.asp\">"};
-const tbody = {name: "tbody", type: "HTML", example: "<tbody>", definition: "Groups the body content in a table", url: "<a href=\"https://www.w3schools.com/tags/tag_table.asp\">"};
-const td = {name: "td", type: "HTML", example: "<td>", definition: "Defines a cell in a table", url: "<a href=\"https://www.w3schools.com/tags/tag_tbody.asp\">"};
-const template = {name: "template", type: "HTML", example: "<template>", definition: "Defines a template", url: "<a href=\"https://www.w3schools.com/tags/tag_td.asp\">"};
-const textarea = {name: "textarea", type: "HTML", example: "<textarea>", definition: "Defines a multiline input control (text area)", url: "<a href=\"https://www.w3schools.com/tags/tag_template.asp\">"};
-const tfoot = {name: "tfoot", type: "HTML", example: "<tfoot>", definition: "Groups the footer content in a table", url: "<a href=\"https://www.w3schools.com/tags/tag_textarea.asp\">"};
-const th = {name: "th", type: "HTML", example: "<th>", definition: "Defines a header cell in a table", url: "<a href=\"https://www.w3schools.com/tags/tag_tfoot.asp\">"};
-const thead = {name: "thead", type: "HTML", example: "<thead>", definition: "Groups the header content in a table", url: "<a href=\"https://www.w3schools.com/tags/tag_th.asp\">"};
-const time = {name: "time", type: "HTML", example: "<time>", definition: "Defines a date/time", url: "<a href=\"https://www.w3schools.com/tags/tag_thead.asp\">"};
-const title = {name: "title", type: "HTML", example: "<title>", definition: "Defines a title for the document", url: "<a href=\"https://www.w3schools.com/tags/tag_time.asp\">"};
-const tr = {name: "tr", type: "HTML", example: "<tr>", definition: "Defines a row in a table", url: "<a href=\"https://www.w3schools.com/tags/tag_title.asp\">"};
-const track = {name: "track", type: "HTML", example: "<track>", definition: "Defines text tracks for media elements (<video> and <audio>)", url: "<a href=\"https://www.w3schools.com/tags/tag_tr.asp\">"};
-const u = {name: "u", type: "HTML", example: "<u>", definition: "Defines text that should be stylistically different from normal text", url: "<a href=\"https://www.w3schools.com/tags/tag_track.asp\">"};
-const ul = {name: "ul", type: "HTML", example: "<ul>", definition: "Defines an unordered list", url: "<a href=\"https://www.w3schools.com/tags/tag_u.asp\">"};
-// const var = {name: "var", type: "HTML", example: "<var>", definition: "Defines a variable", url: "<a href=\"https://www.w3schools.com/tags/tag_ul.asp\">"};
-const video = {name: "video", type: "HTML", example: "<video>", definition: "Defines a video or movie", url: "<a href=\"https://www.w3schools.com/tags/tag_var.asp\">"};
-const wbr = {name: "wbr", type: "HTML", example: "<wbr>", definition: "Defines a possible line-break", url: "<a href=\"https://www.w3schools.com/tags/tag_video.asp\">"};
+const a = {name: "a", type: "HTML", example: "a", definition: "Defines a hyperlink", url: "a href=\"https://www.w3schools.com/tags/tag_a.asp\""};
+const abbr = {name: "abbr", type: "HTML", example: "abbr", definition: "Defines an abbreviation or an acronym", url: "a href=\"https://www.w3schools.com/tags/tag_abbr.asp\""};
+const address = {name: "address", type: "HTML", example: "address", definition: "Defines contact information for the author/owner of a document", url: "a href=\"https://www.w3schools.com/tags/tag_address.asp\""};
+const area = {name: "area", type: "HTML", example: "area", definition: "Defines an area inside an image-map", url: "a href=\"https://www.w3schools.com/tags/tag_area.asp\""};
+const article = {name: "article", type: "HTML", example: "article", definition: "Defines an article", url: "a href=\"https://www.w3schools.com/tags/tag_article.asp\""};
+const aside = {name: "aside", type: "HTML", example: "aside", definition: "Defines content aside from the page content", url: "a href=\"https://www.w3schools.com/tags/tag_aside.asp\""};
+const audio = {name: "audio", type: "HTML", example: "audio", definition: "Defines sound content", url: "a href=\"https://www.w3schools.com/tags/tag_audio.asp\""};
+const b = {name: "b", type: "HTML", example: "b", definition: "Defines bold text", url: "a href=\"https://www.w3schools.com/tags/tag_b.asp\""};
+const base = {name: "base", type: "HTML", example: "base", definition: "Specifies the base URL/target for all relative URLs in a document", url: "a href=\"https://www.w3schools.com/tags/tag_base.asp\""};
+const bdi = {name: "bdi", type: "HTML", example: "bdi", definition: "Isolates a part of text that might be formatted in a different direction from other text outside it", url: "a href=\"https://www.w3schools.com/tags/tag_bdi.asp\""};
+const bdo = {name: "bdo", type: "HTML", example: "bdo", definition: "Overrides the current text direction", url: "a href=\"https://www.w3schools.com/tags/tag_bdo.asp\""};
+const blockquote = {name: "blockquote", type: "HTML", example: "blockquote", definition: "Defines a section that is quoted from another source", url: "a href=\"https://www.w3schools.com/tags/tag_blockquote.asp\""};
+const body = {name: "body", type: "HTML", example: "body", definition: "Defines the document's body", url: "a href=\"https://www.w3schools.com/tags/tag_body.asp\""};
+const br = {name: "br", type: "HTML", example: "br", definition: "Defines a single line break", url: "a href=\"https://www.w3schools.com/tags/tag_br.asp\""};
+const button = {name: "button", type: "HTML", example: "button", definition: "Defines a clickable button", url: "a href=\"https://www.w3schools.com/tags/tag_button.asp\""};
+const canvas = {name: "canvas", type: "HTML", example: "canvas", definition: "Used to draw graphics, on the fly, via scripting (usually JavaScript)", url: "a href=\"https://www.w3schools.com/tags/tag_canvas.asp\""};
+const caption = {name: "caption", type: "HTML", example: "caption", definition: "Defines a table caption", url: "a href=\"https://www.w3schools.com/tags/tag_caption.asp\""};
+const cite = {name: "cite", type: "HTML", example: "cite", definition: "Defines the title of a work", url: "a href=\"https://www.w3schools.com/tags/tag_cite.asp\""};
+const code = {name: "code", type: "HTML", example: "code", definition: "Defines a piece of computer code", url: "a href=\"https://www.w3schools.com/tags/tag_code.asp\""};
+const col = {name: "col", type: "HTML", example: "col", definition: "Specifies column properties for each column within a colgroup element", url: "a href=\"https://www.w3schools.com/tags/tag_col.asp\""};
+const colgroup = {name: "colgroup", type: "HTML", example: "colgroup", definition: "Specifies a group of one or more columns in a table for formatting", url: "a href=\"https://www.w3schools.com/tags/tag_colgroup.asp\""};
+const datalist = {name: "datalist", type: "HTML", example: "datalist", definition: "Specifies a list of pre-defined options for input controls", url: "a href=\"https://www.w3schools.com/tags/tag_datalist.asp\""};
+const dd = {name: "dd", type: "HTML", example: "dd", definition: "Defines a description/value of a term in a description list", url: "a href=\"https://www.w3schools.com/tags/tag_dd.asp\""};
+const del = {name: "del", type: "HTML", example: "del", definition: "Defines text that has been deleted from a document", url: "a href=\"https://www.w3schools.com/tags/tag_del.asp\""};
+const details = {name: "details", type: "HTML", example: "details", definition: "Defines additional details that the user can view or hide", url: "a href=\"https://www.w3schools.com/tags/tag_details.asp\""};
+const dfn = {name: "dfn", type: "HTML", example: "dfn", definition: "Represents the defining instance of a term", url: "a href=\"https://www.w3schools.com/tags/tag_dfn.asp\""};
+const dialog = {name: "dialog", type: "HTML", example: "dialog", definition: "Defines a dialog box or window", url: "a href=\"https://www.w3schools.com/tags/tag_dialog.asp\""};
+const div = {name: "div", type: "HTML", example: "div", definition: "Defines a section in a document", url: "a href=\"https://www.w3schools.com/tags/tag_div.asp\""};
+const dl = {name: "dl", type: "HTML", example: "dl", definition: "Defines a description list", url: "a href=\"https://www.w3schools.com/tags/tag_dl.asp\""};
+const dt = {name: "dt", type: "HTML", example: "dt", definition: "Defines a term/name in a description list", url: "a href=\"https://www.w3schools.com/tags/tag_dt.asp\""};
+const em = {name: "em", type: "HTML", example: "em", definition: "Defines emphasized text", url: "a href=\"https://www.w3schools.com/tags/tag_em.asp\""};
+const embed = {name: "embed", type: "HTML", example: "embed", definition: "Defines a container for an external (non-HTML) application", url: "a href=\"https://www.w3schools.com/tags/tag_embed.asp\""};
+const fieldset = {name: "fieldset", type: "HTML", example: "fieldset", definition: "Groups related elements in a form", url: "a href=\"https://www.w3schools.com/tags/tag_fieldset.asp\""};
+const figcaption = {name: "figcaption", type: "HTML", example: "figcaption", definition: "Defines a caption for a figure element", url: "a href=\"https://www.w3schools.com/tags/tag_figcaption.asp\""};
+const figure = {name: "figure", type: "HTML", example: "figure", definition: "Specifies self-contained content", url: "a href=\"https://www.w3schools.com/tags/tag_figure.asp\""};
+const footer = {name: "footer", type: "HTML", example: "footer", definition: "Defines a footer for a document or section", url: "a href=\"https://www.w3schools.com/tags/tag_footer.asp\""};
+const form = {name: "form", type: "HTML", example: "form", definition: "Defines an HTML form for user input", url: "a href=\"https://www.w3schools.com/tags/tag_form.asp\""};
+const head = {name: "head", type: "HTML", example: "head", definition: "Defines information about the document", url: "a href=\"https://www.w3schools.com/tags/tag_head.asp\""};
+const header = {name: "header", type: "HTML", example: "header", definition: "Defines a header for a document or section", url: "a href=\"https://www.w3schools.com/tags/tag_header.asp\""};
+const hr = {name: "hr", type: "HTML", example: "hr", definition: "Defines a thematic change in the content", url: "a href=\"https://www.w3schools.com/tags/tag_hn.asp\""};
+const html = {name: "html", type: "HTML", example: "html", definition: "Defines the root of an HTML document", url: "a href=\"https://www.w3schools.com/tags/tag_hr.asp\""};
+const i = {name: "i", type: "HTML", example: "i", definition: "Defines a part of text in an alternate voice or mood", url: "a href=\"https://www.w3schools.com/tags/tag_html.asp\""};
+const iframe = {name: "iframe", type: "HTML", example: "iframe", definition: "Defines an inline frame", url: "a href=\"https://www.w3schools.com/tags/tag_i.asp\""};
+const img = {name: "img", type: "HTML", example: "img", definition: "Defines an image", url: "a href=\"https://www.w3schools.com/tags/tag_iframe.asp\""};
+const input = {name: "input", type: "HTML", example: "input", definition: "Defines an input control", url: "a href=\"https://www.w3schools.com/tags/tag_img.asp\""};
+const ins = {name: "ins", type: "HTML", example: "ins", definition: "Defines a text that has been inserted into a document", url: "a href=\"https://www.w3schools.com/tags/tag_input.asp\""};
+const kbd = {name: "kbd", type: "HTML", example: "kbd", definition: "Defines keyboard input", url: "a href=\"https://www.w3schools.com/tags/tag_ins.asp\""};
+const label = {name: "label", type: "HTML", example: "label", definition: "Defines a label for an input element", url: "a href=\"https://www.w3schools.com/tags/tag_kbd.asp\""};
+const legend = {name: "legend", type: "HTML", example: "legend", definition: "Defines a caption for a fieldset element", url: "a href=\"https://www.w3schools.com/tags/tag_label.asp\""};
+const li = {name: "li", type: "HTML", example: "li", definition: "Defines a list item", url: "a href=\"https://www.w3schools.com/tags/tag_legend.asp\""};
+const link = {name: "link", type: "HTML", example: "link", definition: "Defines the relationship between a document and an external resource (most used to link to style sheets)", url: "a href=\"https://www.w3schools.com/tags/tag_li.asp\""};
+const main = {name: "main", type: "HTML", example: "main", definition: "Specifies the main content of a document", url: "a href=\"https://www.w3schools.com/tags/tag_link.asp\""};
+const map = {name: "map", type: "HTML", example: "map", definition: "Defines a client-side image-map", url: "a href=\"https://www.w3schools.com/tags/tag_main.asp\""};
+const mark = {name: "mark", type: "HTML", example: "mark", definition: "Defines marked/highlighted text", url: "a href=\"https://www.w3schools.com/tags/tag_map.asp\""};
+const menu = {name: "menu", type: "HTML", example: "menu", definition: "Defines a list/menu of commands", url: "a href=\"https://www.w3schools.com/tags/tag_mark.asp\""};
+const menuitem = {name: "menuitem", type: "HTML", example: "menuitem", definition: "Defines a command/menu item that the user can invoke from a popup menu", url: "a href=\"https://www.w3schools.com/tags/tag_menu.asp\""};
+const meta = {name: "meta", type: "HTML", example: "meta", definition: "Defines metadata about an HTML document", url: "a href=\"https://www.w3schools.com/tags/tag_menuitem.asp\""};
+const meter = {name: "meter", type: "HTML", example: "meter", definition: "Defines a scalar measurement within a known range (a gauge)", url: "a href=\"https://www.w3schools.com/tags/tag_meta.asp\""};
+const nav = {name: "nav", type: "HTML", example: "nav", definition: "Defines navigation links", url: "a href=\"https://www.w3schools.com/tags/tag_meter.asp\""};
+const noscript = {name: "noscript", type: "HTML", example: "noscript", definition: "Defines an alternate content for users that do not support client-side scripts", url: "a href=\"https://www.w3schools.com/tags/tag_nav.asp\""};
+const object = {name: "object", type: "HTML", example: "object", definition: "Defines an embedded object", url: "a href=\"https://www.w3schools.com/tags/tag_noscript.asp\""};
+const ol = {name: "ol", type: "HTML", example: "ol", definition: "Defines an ordered list", url: "a href=\"https://www.w3schools.com/tags/tag_object.asp\""};
+const optgroup = {name: "optgroup", type: "HTML", example: "optgroup", definition: "Defines a group of related options in a drop-down list", url: "a href=\"https://www.w3schools.com/tags/tag_ol.asp\""};
+const option = {name: "option", type: "HTML", example: "option", definition: "Defines an option in a drop-down list", url: "a href=\"https://www.w3schools.com/tags/tag_optgroup.asp\""};
+const output = {name: "output", type: "HTML", example: "output", definition: "Defines the result of a calculation", url: "a href=\"https://www.w3schools.com/tags/tag_option.asp\""};
+const p = {name: "p", type: "HTML", example: "p", definition: "Defines a paragraph", url: "a href=\"https://www.w3schools.com/tags/tag_output.asp\""};
+const param = {name: "param", type: "HTML", example: "param", definition: "Defines a parameter for an object", url: "a href=\"https://www.w3schools.com/tags/tag_p.asp\""};
+const picture = {name: "picture", type: "HTML", example: "picture", definition: "Defines a container for multiple image resources", url: "a href=\"https://www.w3schools.com/tags/tag_param.asp\""};
+const pre = {name: "pre", type: "HTML", example: "pre", definition: "Defines preformatted text", url: "a href=\"https://www.w3schools.com/tags/tag_picture.asp\""};
+const progress = {name: "progress", type: "HTML", example: "progress", definition: "Represents the progress of a task", url: "a href=\"https://www.w3schools.com/tags/tag_pre.asp\""};
+const q = {name: "q", type: "HTML", example: "q", definition: "Defines a short quotation", url: "a href=\"https://www.w3schools.com/tags/tag_progress.asp\""};
+const rp = {name: "rp", type: "HTML", example: "rp", definition: "Defines what to show in browsers that do not support ruby annotations", url: "a href=\"https://www.w3schools.com/tags/tag_q.asp\""};
+const rt = {name: "rt", type: "HTML", example: "rt", definition: "Defines an explanation/pronunciation of characters (for East Asian typography)", url: "a href=\"https://www.w3schools.com/tags/tag_rp.asp\""};
+const ruby = {name: "ruby", type: "HTML", example: "ruby", definition: "Defines a ruby annotation (for East Asian typography)", url: "a href=\"https://www.w3schools.com/tags/tag_rt.asp\""};
+const s = {name: "s", type: "HTML", example: "s", definition: "Defines text that is no longer correct", url: "a href=\"https://www.w3schools.com/tags/tag_ruby.asp\""};
+const samp = {name: "samp", type: "HTML", example: "samp", definition: "Defines sample output from a computer program", url: "a href=\"https://www.w3schools.com/tags/tag_s.asp\""};
+const script = {name: "script", type: "HTML", example: "script", definition: "Defines a client-side script", url: "a href=\"https://www.w3schools.com/tags/tag_samp.asp\""};
+const section = {name: "section", type: "HTML", example: "section", definition: "Defines a section in a document", url: "a href=\"https://www.w3schools.com/tags/tag_script.asp\""};
+const select = {name: "select", type: "HTML", example: "select", definition: "Defines a drop-down list", url: "a href=\"https://www.w3schools.com/tags/tag_section.asp\""};
+const small = {name: "small", type: "HTML", example: "small", definition: "Defines smaller text", url: "a href=\"https://www.w3schools.com/tags/tag_select.asp\""};
+const source = {name: "source", type: "HTML", example: "source", definition: "Defines multiple media resources for media elements (video and audio)", url: "a href=\"https://www.w3schools.com/tags/tag_small.asp\""};
+const span = {name: "span", type: "HTML", example: "span", definition: "Defines a section in a document", url: "a href=\"https://www.w3schools.com/tags/tag_source.asp\""};
+const strong = {name: "strong", type: "HTML", example: "strong", definition: "Defines important text", url: "a href=\"https://www.w3schools.com/tags/tag_span.asp\""};
+const style = {name: "style", type: "HTML", example: "style", definition: "Defines style information for a document", url: "a href=\"https://www.w3schools.com/tags/tag_strong.asp\""};
+const sub = {name: "sub", type: "HTML", example: "sub", definition: "Defines subscripted text", url: "a href=\"https://www.w3schools.com/tags/tag_style.asp\""};
+const summary = {name: "summary", type: "HTML", example: "summary", definition: "Defines a visible heading for a details element", url: "a href=\"https://www.w3schools.com/tags/tag_sub.asp\""};
+const sup = {name: "sup", type: "HTML", example: "sup", definition: "Defines superscripted text", url: "a href=\"https://www.w3schools.com/tags/tag_summary.asp\""};
+const table = {name: "table", type: "HTML", example: "table", definition: "Defines a table", url: "a href=\"https://www.w3schools.com/tags/tag_sup.asp\""};
+const tbody = {name: "tbody", type: "HTML", example: "tbody", definition: "Groups the body content in a table", url: "a href=\"https://www.w3schools.com/tags/tag_table.asp\""};
+const td = {name: "td", type: "HTML", example: "td", definition: "Defines a cell in a table", url: "a href=\"https://www.w3schools.com/tags/tag_tbody.asp\""};
+const template = {name: "template", type: "HTML", example: "template", definition: "Defines a template", url: "a href=\"https://www.w3schools.com/tags/tag_td.asp\""};
+const textarea = {name: "textarea", type: "HTML", example: "textarea", definition: "Defines a multiline input control (text area)", url: "a href=\"https://www.w3schools.com/tags/tag_template.asp\""};
+const tfoot = {name: "tfoot", type: "HTML", example: "tfoot", definition: "Groups the footer content in a table", url: "a href=\"https://www.w3schools.com/tags/tag_textarea.asp\""};
+const th = {name: "th", type: "HTML", example: "th", definition: "Defines a header cell in a table", url: "a href=\"https://www.w3schools.com/tags/tag_tfoot.asp\""};
+const thead = {name: "thead", type: "HTML", example: "thead", definition: "Groups the header content in a table", url: "a href=\"https://www.w3schools.com/tags/tag_th.asp\""};
+const time = {name: "time", type: "HTML", example: "time", definition: "Defines a date/time", url: "a href=\"https://www.w3schools.com/tags/tag_thead.asp\""};
+const title = {name: "title", type: "HTML", example: "title", definition: "Defines a title for the document", url: "a href=\"https://www.w3schools.com/tags/tag_time.asp\""};
+const tr = {name: "tr", type: "HTML", example: "tr", definition: "Defines a row in a table", url: "a href=\"https://www.w3schools.com/tags/tag_title.asp\""};
+const track = {name: "track", type: "HTML", example: "track", definition: "Defines text tracks for media elements (video and audio)", url: "a href=\"https://www.w3schools.com/tags/tag_track.asp\""};
+const u = {name: "u", type: "HTML", example: "u", definition: "Defines text that should be stylistically different from normal text", url: "a href=\"https://www.w3schools.com/tags/tag_tr.asp\""};
+const ul = {name: "ul", type: "HTML", example: "ul", definition: "Defines an unordered list", url: "a href=\"https://www.w3schools.com/tags/tag_u.asp\""};
+// const var = {name: "var", type: "HTML", example: "var", definition: "Defines a variable", url: "a href=\"https://www.w3schools.com/tags/tag_ul.asp\""};
+const video = {name: "video", type: "HTML", example: "video", definition: "Defines a video or movie", url: "a href=\"https://www.w3schools.com/tags/tag_var.asp\""};
+const wbr = {name: "wbr", type: "HTML", example: "wbr", definition: "Defines a possible line-break", url: "a href=\"https://www.w3schools.com/tags/tag_video.asp\""};
 
 // CSS Property Database
 const cssCharset = {name: "@charset", type: "CSS", example: "N/A", definition: "Specifies the character encoding used in the style sheet", url: "a href=\"https://www.w3schools.com/cssref/pr_charset_rule.asp\""};
@@ -338,15 +338,43 @@ const cssArray = [cssCharset, cssFontface, cssFontfeaturevalues, cssImport, cssK
 // random Arrays
 let randomHtml = htmlArray[Math.floor(Math.random()*htmlArray.length)];
 let randomCss = cssArray[Math.floor(Math.random()*cssArray.length)];
+let riddle = randomHtml.name;
+
+// // choose code
+// let htmlCode;
+// let cssCode;
+// let chosenCode = htmlCode;
+
+// // code chosen
+// if (chosenCode = htmlCode) {
+//     let lBracket = "&lt";
+//     let rBracket = "&gt"; 
+// } else if (chosenCode = cssCode) {
+//     let lBracket = "{";
+//     let rBracket = "}";
+// }
+// console.log(lBracket);
+
+let w3Link = "click this <" + randomHtml.url + ">link</a> for more information";
+
 
 // HTML Game
 console.log(randomHtml);
+console.log(riddle.length);
 
-var keys = Object.keys(randomHtml);
-console.log(randomHtml.name);
+let maskedWord = Array(riddle.length + 1).join(" _ ");
+console.log(maskedWord);
 
+const kudos = ["Bravo","Well, that for sure looked easy", "Easy enough, huh?","GRrrreat","That one was a no-brainer...","Really?","Think you can do this again?","You are beating the Matrix!","Achievement unlocked: GOD LEVEL!!","Wow, you have to be a TA, aren't you?","...Parker, is it you?"]
+const sucker = ["Oops, sorry about that", "Hmm... that one was not obvious, try again!","I am sending you a picture of a kitty, for your trouble...","Were you paying attention?","Ok, wanna cry?","Ready to give up?","You have to be good at something else, right...?","Really?", "I expected better. I am soooo disappointed","Should I dumb it down for you?","Here is a hing: the next one is not something you know. Because, well, you don't know much obviously..."]
 
-/* <p id="element_name"></p>
-<p id="element_definition"></p>
-<p id="element_url"></p>
-<p id="element_example"></p> */
+// get keyboard input
+var keyPressed = prompt("Enter a guess");
+console.log(keyPressed);
+
+// letter
+for (var j = 0; j < riddle.length; j++) {
+    if(riddle.slice(j,j+1) === keyPressed) {
+        maskedWord = maskedWord.replace('_',keyPressed);
+    }
+}

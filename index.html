@@ -10,17 +10,35 @@
     <title>The Great Coding Flashcard Game</title>
 </head>
 <body>
+    <h1>Welcome to the Great Coding Flashcard Game!</h1>
+    <br>
+    <p><span id="element_type"></span> attribute to guess: <span id="word_to_guess"></span></p>
     <p>Name: <span id="element_name"></span></p> 
-    <p>Definition: <span id="element_definition"> </span></p>
-    <p>URL: <span id="element_url"></span></p>
-    <p> Example: <span id="element_example"></span></p>
+    <p>Definition: <span id="element_definition"></span></p>
+    <p>URL: <span id="element_url">Link to W3School</a></span></p>
+    <div class="box">
+        <p class="example">
+            <!-- <span class="l_bracket"></span> -->
+            <span class="bracket">&lt;</span>
+            <span id="element_example"></span>
+            <span class="bracket">&gt;</span>
+            <!-- <span class="r_bracket"></span> -->
+        </p>
+    </div>
 
     <script>
-        document.querySelector("#element_name").innerHTML= randomHtml.name
+        document.querySelector("#word_to_guess").innerHTML= maskedWord
+        document.querySelector("#element_name").innerHTML= riddle
         document.querySelector("#element_definition").innerHTML= randomHtml.definition
-        document.querySelector("#element_url").innerHTML= randomHtml.url    
+        document.querySelector("#element_url").innerHTML= w3Link    
+        document.querySelector("#element_type").innerHTML= randomHtml.type    
         document.querySelector("#element_example").innerHTML= randomHtml.example
+        // document.querySelector("#l_bracket").innerHTML= lBracket
+        // document.querySelector("#r_bracket").innerHTML= rBracket
+        
     </script>
+
+
 
 </body>
 </html>
