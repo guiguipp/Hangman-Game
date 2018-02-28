@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script src="assets/javascript/game.js"></script>
     <title>The Great Coding Flashcard Game</title>
 </head>
 <body>
@@ -25,20 +24,12 @@
             <!-- <span class="r_bracket"></span> -->
         </p>
     </div>
-
-    <script>
-        document.querySelector("#word_to_guess").innerHTML= maskedWord
-        document.querySelector("#element_name").innerHTML= riddle
-        document.querySelector("#element_definition").innerHTML= randomHtml.definition
-        document.querySelector("#element_url").innerHTML= w3Link    
-        document.querySelector("#element_type").innerHTML= randomHtml.type    
-        document.querySelector("#element_example").innerHTML= randomHtml.example
-        // document.querySelector("#l_bracket").innerHTML= lBracket
-        // document.querySelector("#r_bracket").innerHTML= rBracket
-        
-    </script>
+    
+<!-- Game -->
+<p>Your guesses: <span id="guesses"></span></p>    
+<p>You are allowed <span id="num_guesses"></span>  guesses</p>    
 
 
-
-</body>
+    </body>
+    <script src="assets/javascript/game.js"></script>
 </html>

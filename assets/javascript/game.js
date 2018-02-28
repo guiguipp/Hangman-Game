@@ -344,31 +344,73 @@ let randomHtml = htmlArray[Math.floor(Math.random()*htmlArray.length)];
 let randomCss = cssArray[Math.floor(Math.random()*cssArray.length)];
 
 // show me the object
-console.log(randomHtml);
+console.log("This is the word to guess:" + randomHtml.name);
+console.log("----------------");
 
 // show me the name (aka: the word to guess)
 let riddle = randomHtml.name;
-console.log(riddle.length);
+console.log("This is the length of the word to guess: " + riddle.length);
+console.log("----------------");
+
 
 // Text on main page 
 let w3Link = "click this <" + randomHtml.url + ">link</a> for more information";
 let maskedWord = Array(riddle.length + 1).join(" _ ");
-console.log(maskedWord);
+console.log("This is how the word should display: " + maskedWord);
+console.log("----------------");
+
 
 // splitting the word to guess into characters in an array
 let wordToGuess = riddle.split("");
-console.log(wordToGuess);
+console.log("Word to guess letter by letter (as an array)= " + wordToGuess);
+console.log("----------------");
 
-// var keys = [];
-let keyName;
-let firstGuess;
+var attemptedGuesses = [];
+var keyName;
 
-//   https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/KeyboardEvent
-document.addEventListener('keypress', (event) => {
-    let keyName = event.key;
+// number guesses allowed assigned to variable numGuesses (if word too small: less guesses)
+var numGuesses;
+if (riddle.length < 4) {
+    numGuesses = riddle.length + 2;
+} 
+else {
+    numGuesses = riddle.length + 5;
+}
+
+// // number guesses allowed (same for every word to guess)
+// var numGuesses = riddle.length + 2;
+
+console.log("Number of guesses allowed: " + numGuesses)
+console.log("-------------------")
+
+// the function happens too early
+document.onkeyup = function(event) {
+    var keyName = event.key;    
     console.log(keyName);
-    let firstGuess = keyName;
-});
-console.log(firstGuess);
-// From https://developer.mozilla.org/en-US/docs/Web/Events/keypress
-// event = new KeyboardEvent(keyName);
+    attemptedGuesses.push(keyName);
+}
+document.onkeyup = function(event) {
+    keyName = String.fromCharCode(event.which).toLowerCase();
+    console.log(keyName);
+}
+console.log("Letter guessed in the global scope: " + keyName)
+
+
+console.log("this is the attempted guesses: " + attemptedGuesses);
+console.log("----------------");
+
+
+
+
+// Content to populate on main page
+document.querySelector("#word_to_guess").innerHTML= maskedWord
+document.querySelector("#element_name").innerHTML= riddle
+document.querySelector("#element_definition").innerHTML= randomHtml.definition
+document.querySelector("#element_url").innerHTML= w3Link    
+document.querySelector("#element_type").innerHTML= randomHtml.type    
+document.querySelector("#element_example").innerHTML= randomHtml.example
+document.querySelector("#num_guesses").innerHTML= numGuesses
+document.querySelector("#guesses").innerHTML= keyName
+// document.querySelector("#l_bracket").innerHTML= lBracket
+// document.querySelector("#r_bracket").innerHTML= rBracket
+
