@@ -12,6 +12,7 @@ div.box {
     width: 200px;
     height: 100px;
 }
+/* header css (credit to: https://css-tricks.com/snippets/css/typewriter-effect/) */
 .var-highlight {
     color: #C0AD60;
   }
