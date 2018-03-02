@@ -1,3 +1,73 @@
+// Header
+function setupTypewriter(t) {
+    var HTML = t.innerHTML;
+
+    t.innerHTML = "";
+
+    var cursorPosition = 0,
+        tag = "",
+        writingTag = false,
+        tagOpen = false,
+        typeSpeed = 100,
+    tempTypeSpeed = 0;
+
+    var type = function() {
+    
+        if (writingTag === true) {
+            tag += HTML[cursorPosition];
+        }
+
+        if (HTML[cursorPosition] === "<") {
+            tempTypeSpeed = 0;
+            if (tagOpen) {
+                tagOpen = false;
+                writingTag = true;
+            } else {
+                tag = "";
+                tagOpen = true;
+                writingTag = true;
+                tag += HTML[cursorPosition];
+            }
+        }
+        if (!writingTag && tagOpen) {
+            tag.innerHTML += HTML[cursorPosition];
+        }
+        if (!writingTag && !tagOpen) {
+            if (HTML[cursorPosition] === " ") {
+                tempTypeSpeed = 0;
+            }
+            else {
+                tempTypeSpeed = (Math.random() * typeSpeed) + 50;
+            }
+            t.innerHTML += HTML[cursorPosition];
+        }
+        if (writingTag === true && HTML[cursorPosition] === ">") {
+            tempTypeSpeed = (Math.random() * typeSpeed) + 50;
+            writingTag = false;
+            if (tagOpen) {
+                var newSpan = document.createElement("span");
+                t.appendChild(newSpan);
+                newSpan.innerHTML = tag;
+                tag = newSpan.firstChild;
+            }
+        }
+
+        cursorPosition += 1;
+        if (cursorPosition < HTML.length - 1) {
+            setTimeout(type, tempTypeSpeed);
+        }
+
+    };
+
+    return {
+        type: type
+    };
+}
+
+var typer = document.getElementById('typewriter');
+typewriter = setupTypewriter(typewriter);
+typewriter.type();
+
 // HTML Attributes Database 
 const a = {name: "a", type: "HTML", example: "a", definition: "Defines a hyperlink", url: "a href=\"https://www.w3schools.com/tags/tag_a.asp\""};
 const abbr = {name: "abbr", type: "HTML", example: "abbr", definition: "Defines an abbreviation or an acronym", url: "a href=\"https://www.w3schools.com/tags/tag_abbr.asp\""};
@@ -358,7 +428,19 @@ let riddle = randomHtml.name;
 
 // Text on main page 
 let w3Link = "click this <" + randomHtml.url + ">link</a> for more information";
-let maskedWord = Array(riddle.length + 1).join(" _ ");
+// let hiddenChar = " _ "
+let maskedWord = [];
+for (let i = 0; i < riddle.length; i++) {
+    maskedWord[i] = " _ ";
+}
+
+
+// maskedWord = Array(riddle.length + 1).join(" _ ");
+
+// let maskedWord =[];
+// for (var j=0; j<riddle.length; j++) {
+//     maskedWord[i]= "_";
+// } 
 // console.log("This is how the word should display: " + maskedWord);
 // console.log("----------------");
 
@@ -386,23 +468,28 @@ else {
 
 // console.log("Number of guesses allowed: " + numGuesses)
 // console.log("-------------------")
-document.querySelector("#word_to_guess").innerHTML= maskedWord
 document.querySelector("#element_definition").innerHTML= randomHtml.definition
 
 // the function happens too early
 document.onkeyup = function(event) {
     keyName = event.key;
     // including the function here allows it to run when key is pressed!!
-    checkGuessValidity();    
+    checkGuessValidity();
+    guessForTheWin();
+    resetGame();
+    // counters();
     // checkDuplicate();
     // console.log("value in the local scope " + keyName);
     // Content to populate on main page
-    document.querySelector("#element_name").innerHTML= riddle
+    // document.querySelector("#element_name").innerHTML= riddle
+    document.querySelector("#word_to_guess").innerHTML= maskedWord.join(" ")
     document.querySelector("#element_type").innerHTML= randomHtml.type    
     document.querySelector("#element_example").innerHTML= randomHtml.example
     document.querySelector("#element_url").innerHTML= w3Link    
     document.querySelector("#num_guesses").innerHTML= numGuesses
     document.querySelector("#guesses").innerHTML= allLegitKeysPressed
+    // document.querySelector("#rem_guesses").innerHTML= remainingGuesses
+
 // document.querySelector("#l_bracket").innerHTML= lBracket
 // document.querySelector("#r_bracket").innerHTML= rBracket
 
@@ -425,26 +512,42 @@ var attemptedGuesses= [];
 function checkGuessValidity() {
     for (var j = 0; j<allowedChar.length; j++) {
         if (keyName === allowedChar[j]) {
-            console.log(keyName + " is a valid character")
+            // console.log(keyName + " is a valid character")
             validChar = keyName;
             allLegitKeysPressed.push(validChar);
-            checkDuplicate();
+            // checkDuplicate();
+            // guessForTheWin();
         }
     }
 } 
 
-
-var newKey;
-function checkDuplicate() {
-    for (r = 0; r < (allLegitKeysPressed.length+1); r++) {
-        if (validChar !== allLegitKeysPressed[r]) {
-            newKey = validChar;
-            attemptedGuesses.push(newKey);
-            console.log("AllLegiKeysPressed: " + allLegitKeysPressed);
-            console.log("attemptedGuesses: " + attemptedGuesses);
-            break;
-        } 
+let remainingGuesses = numGuesses;
+let goodGuess;
+function guessForTheWin () {
+    for (var i = 0; i < riddle.length; i++) {
+        if (validChar === riddle[i]) {
+            // alert("Letter is good!");
+            goodGuess = validChar;
+            maskedWord.splice(i,1,validChar);
+            document.querySelector("#word_to_guess").innerHTML= maskedWord
+            
+        }
     }
 }
 
+function resetGame() {
+    console.log("maskedWord: " + maskedWord)
+    console.log("wordToGuess: " + wordToGuess)
+    for (let i=0; i<numGuesses; i++){
+        if (maskedWord === wordToGuess) {
+            alert("You won this game")
+        }    
+    }
+}
+// remainingGuesses = numGuesses
+// function counters() {
+//     if (keyName !== goodGuess) {
+//         remainingGuesses--;
+//     }
+// }
 
