@@ -32,7 +32,6 @@ for (let i = 0; i < riddle.length; i++) {
 let wordToGuess = riddle.split("");
 
 // counting
-var allLegitKeysPressed = [];
 var keyName;
 var tallyGuesses;
 
@@ -55,17 +54,14 @@ document.onkeyup = function(event) {
     keyName = event.key;
     // including the function here allows it to run when key is pressed!!
     checkGuessValidity();
-    // checkChar();
     guessForTheWin();
     resetGame();
-    // counters();
-    // checkDuplicate();
-    // console.log("value in the local scope " + keyName);
+    
     // Content to populate on main page
     document.querySelector("#element_type").innerHTML= randomHtml.type
     // document.querySelector("#victories").innerHTML= victoryMessage    
     document.querySelector("#element_example").innerHTML= randomHtml.example
-    document.querySelector("#guesses").innerHTML= allLegitKeysPressed.join("-")
+    document.querySelector("#guesses").innerHTML= attemptedGuesses.join("-")
 
 // document.querySelector("#l_bracket").innerHTML= lBracket
 // document.querySelector("#r_bracket").innerHTML= rBracket
@@ -73,25 +69,25 @@ document.onkeyup = function(event) {
 }
 /* 
 ******************
-THIS IS THE FUNCTION THAT CHECKS IF THE KEY IS A LEGIT CHARACTER ------ GOOD!
+THIS IS THE FUNCTION THAT CHECKS IF THE KEY IS A LEGIT CHARACTER, ADDS IT TO THE ARRAY OF  ------ GOOD!
 ******************
 */
 
 var validChar;
-// var attemptedGuesses= [];
+var attemptedGuesses= [];
 function checkGuessValidity() {
     for (var j = 0; j<allowedChar.length; j++) {
         if (keyName === allowedChar[j]) {
             // console.log(keyName + " is a valid character")
             validChar = keyName;
-            allLegitKeysPressed.push(validChar);
-            return validChar;
-            // checkChar()
-            // checkDuplicate();
-            // guessForTheWin();
+            if (attemptedGuesses.indexOf(validChar) <0) {
+                attemptedGuesses.push(validChar);
+            }
         }
-    }
-} 
+    }      
+}
+    
+// } 
 /* 
 ******************
 THIS IS THE FUNCTION THAT FILLS THE BLANKS AFTER EACH SUCCESSFUL GUESS ------ GOOD!
@@ -105,7 +101,7 @@ function guessForTheWin () {
         if (validChar === riddle[i]) {
             goodGuess = validChar;
             maskedWord.splice(i,1,validChar);
-            document.querySelector("#word_to_guess").innerHTML= maskedWord.join(" ")  
+            document.querySelector("#word_to_guess").innerHTML= maskedWord.join(" ")
         }
     }
 }
@@ -132,58 +128,4 @@ function resetGame() {
     }
 }
 
-
-/* 
-******************
-THIS IS THE FUNCTION TO CHECK AGAINST EXISTING GUESSES
-******************
-*/
-
-
-// let tally = 0;
-var duplicate = false;
-var nonDuplicateKeys=[];
-function checkChar(validChar) {
-    for(let i=0;i<numGuesses;i++){
-    if (keyName === allLegitKeysPressed[i]) {
-            duplicate = true;
-            nonDuplicateKeys.push(validChar);
-            break;
-        }
-    }
-}
-        // else {
-            //     duplicate = false;
-            //     // alert("It's never gonna work")
-            //     // console.log(nonDuplicateKeys)
-            // }
-        // }
-        
-        // alert("DUPLICATE")
-// or (var j = 0; j<allowedChar.length; j++) {
-//     if (keyName === allowedChar[j]) {
-//         // console.log(keyName + " is a valid character")
-//         validChar = keyName;
-//         allLegitKeysPressed.push(validChar);
-
-
-
-
-// else {
-//     failedAttempt = failedAttempt + 1;
-//     remainingGuesses = numGuesses-failedAttempt;
-    // document.querySelector("#num_guesses").innerHTML= numGuesses;
-    // document.querySelector("#rem_guesses").innerHTML= remainingGuesses;
-// }
-
-
-
-// }
-
-//     for (let i=0; i < numGuesses; i++) {
-//         if (maskedWord[i] !== "_"){
-//             console.log("Game won?")
-//         }
-//     }
-// }
 
