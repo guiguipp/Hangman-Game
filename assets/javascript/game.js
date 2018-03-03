@@ -44,14 +44,18 @@ if (riddle.length < 4) {
 else {
     numGuesses = riddle.length + 5;
 }
+var remainingGuesses = numGuesses;
 
 document.querySelector("#element_definition").innerHTML= randomHtml.definition
 document.querySelector("#word_to_guess").innerHTML= maskedWord.join(" ")
+document.querySelector("#num_guesses").innerHTML= numGuesses;
+// document.querySelector("#rem_guesses").innerHTML= remainingGuesses;
 
 document.onkeyup = function(event) {
     keyName = event.key;
     // including the function here allows it to run when key is pressed!!
     checkGuessValidity();
+    // checkChar();
     guessForTheWin();
     resetGame();
     // counters();
@@ -61,32 +65,41 @@ document.onkeyup = function(event) {
     document.querySelector("#element_type").innerHTML= randomHtml.type
     // document.querySelector("#victories").innerHTML= victoryMessage    
     document.querySelector("#element_example").innerHTML= randomHtml.example
-    // document.querySelector("#num_guesses").innerHTML= numGuesses
-    document.querySelector("#guesses").innerHTML= allLegitKeysPressed
-    // document.querySelector("#rem_guesses").innerHTML= remainingGuesses
+    document.querySelector("#guesses").innerHTML= allLegitKeysPressed.join("-")
 
 // document.querySelector("#l_bracket").innerHTML= lBracket
 // document.querySelector("#r_bracket").innerHTML= rBracket
 
 }
+/* 
+******************
+THIS IS THE FUNCTION THAT CHECKS IF THE KEY IS A LEGIT CHARACTER ------ GOOD!
+******************
+*/
 
-// function that checks if the key is a character (working)
 var validChar;
-var attemptedGuesses= [];
+// var attemptedGuesses= [];
 function checkGuessValidity() {
     for (var j = 0; j<allowedChar.length; j++) {
         if (keyName === allowedChar[j]) {
             // console.log(keyName + " is a valid character")
             validChar = keyName;
             allLegitKeysPressed.push(validChar);
+            return validChar;
+            // checkChar()
             // checkDuplicate();
             // guessForTheWin();
         }
     }
 } 
+/* 
+******************
+THIS IS THE FUNCTION THAT FILLS THE BLANKS AFTER EACH SUCCESSFUL GUESS ------ GOOD!
+******************
+*/
 
-// function that fills the blanks after each successful guess (working)
-let goodGuess;
+var goodGuess;
+var failedAttempt = 0;
 function guessForTheWin () {
     for (var i = 0; i < riddle.length; i++) {
         if (validChar === riddle[i]) {
@@ -96,8 +109,12 @@ function guessForTheWin () {
         }
     }
 }
+/* 
+******************
+THIS IS THE FUNCTION TO CHECK IF THE GAME HAS BEEN WON ------ GOOD!
+******************
+*/
 
-// function to check if game is won (working)
 var victories = 0;
 var gameWon = false;
 function resetGame() {
@@ -114,19 +131,59 @@ function resetGame() {
         }
     }
 }
+
+
+/* 
+******************
+THIS IS THE FUNCTION TO CHECK AGAINST EXISTING GUESSES
+******************
+*/
+
+
+// let tally = 0;
+var duplicate = false;
+var nonDuplicateKeys=[];
+function checkChar(validChar) {
+    for(let i=0;i<numGuesses;i++){
+    if (keyName === allLegitKeysPressed[i]) {
+            duplicate = true;
+            nonDuplicateKeys.push(validChar);
+            break;
+        }
+    }
+}
+        // else {
+            //     duplicate = false;
+            //     // alert("It's never gonna work")
+            //     // console.log(nonDuplicateKeys)
+            // }
+        // }
+        
+        // alert("DUPLICATE")
+// or (var j = 0; j<allowedChar.length; j++) {
+//     if (keyName === allowedChar[j]) {
+//         // console.log(keyName + " is a valid character")
+//         validChar = keyName;
+//         allLegitKeysPressed.push(validChar);
+
+
+
+
+// else {
+//     failedAttempt = failedAttempt + 1;
+//     remainingGuesses = numGuesses-failedAttempt;
+    // document.querySelector("#num_guesses").innerHTML= numGuesses;
+    // document.querySelector("#rem_guesses").innerHTML= remainingGuesses;
+// }
+
+
+
 // }
 
 //     for (let i=0; i < numGuesses; i++) {
 //         if (maskedWord[i] !== "_"){
 //             console.log("Game won?")
 //         }
-//     }
-// }
-
-// remainingGuesses = numGuesses
-// function counters() {
-//     if (keyName !== goodGuess) {
-//         remainingGuesses--;
 //     }
 // }
 
