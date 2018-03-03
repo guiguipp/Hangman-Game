@@ -48,18 +48,21 @@ var remainingGuesses = numGuesses;
 document.querySelector("#element_definition").innerHTML= randomHtml.definition
 document.querySelector("#word_to_guess").innerHTML= maskedWord.join(" ")
 document.querySelector("#num_guesses").innerHTML= numGuesses;
-// document.querySelector("#rem_guesses").innerHTML= remainingGuesses;
+document.querySelector("#rem_guesses").innerHTML= remainingGuesses;
+
 
 document.onkeyup = function(event) {
     keyName = event.key;
     // including the function here allows it to run when key is pressed!!
     checkGuessValidity();
     guessForTheWin();
-    resetGame();
+    findWin();
+    
     
     // Content to populate on main page
     document.querySelector("#element_type").innerHTML= randomHtml.type
     // document.querySelector("#victories").innerHTML= victoryMessage    
+    document.querySelector("#rem_guesses").innerHTML= remainingGuesses;
     document.querySelector("#element_example").innerHTML= randomHtml.example
     document.querySelector("#guesses").innerHTML= attemptedGuesses.join("-")
 
@@ -82,6 +85,7 @@ function checkGuessValidity() {
             validChar = keyName;
             if (attemptedGuesses.indexOf(validChar) <0) {
                 attemptedGuesses.push(validChar);
+                counter();
             }
         }
     }      
@@ -113,7 +117,7 @@ THIS IS THE FUNCTION TO CHECK IF THE GAME HAS BEEN WON ------ GOOD!
 
 var victories = 0;
 var gameWon = false;
-function resetGame() {
+function findWin() {
     for (var i = 0; i < numGuesses; i++) {
         if (wordToGuess.toString() === maskedWord.toString()) {
             gameWon = true;
@@ -128,4 +132,34 @@ function resetGame() {
     }
 }
 
+/* 
+******************
+THIS IS THE FUNCTION THAT COUNTS THE REMAINING GUESSES
+******************
+*/
 
+function counter() {
+    for (var l = 0; l<wordToGuess.length; l++) {
+        if (wordToGuess.indexOf(validChar) <0) {
+            
+            console.log("remainingGuesses before: " + remainingGuesses);
+            
+            remainingGuesses--;
+            return remainingGuesses;
+            break;
+            console.log("remainingGuesses after: " + remainingGuesses);
+        }
+    }
+}
+
+/* 
+******************
+THIS IS THE FUNCTION THAT COUNTS THE REMAINING GUESSES
+******************
+*/
+
+function master() {
+    for (var p = 0; p<remainingGuesses.length; p++) {
+
+    }
+}
