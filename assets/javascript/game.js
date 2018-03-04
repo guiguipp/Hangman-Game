@@ -56,7 +56,7 @@ document.onkeyup = function(event) {
     // including the function here allows it to run when key is pressed!!
     // while (remainingGuesses>0) {
         
-        while(remainingGuesses>0) {
+        while(remainingGuesses>0){
             checkGuessValidity();
             guessForTheWin();
             findWin()
@@ -88,7 +88,24 @@ document.onkeyup = function(event) {
 
 /* 
 ******************
-THIS IS THE FUNCTION THAT CHECKS IF THE KEY IS A LEGIT CHARACTER, ADDS IT TO THE ARRAY OF  ------ GOOD!
+THIS IS THE FUNCTION THAT COUNTS THE REMAINING GUESSES
+******************
+*/
+
+function counter() {
+    for (var l = 0; l<wordToGuess.length; l++) {
+        if (wordToGuess.indexOf(validChar) <0) {            
+            remainingGuesses--;
+            return remainingGuesses;
+            break;
+        }
+    }
+}
+
+/* 
+******************
+THIS IS THE FUNCTION THAT CHECKS IF THE KEY IS A LEGIT CHARACTER, 
+ADDS IT TO THE ARRAY OF ATTEMPTED GUESSES IF THEY ARE NOT DUPLICATE
 ******************
 */
 
@@ -110,7 +127,7 @@ function checkGuessValidity() {
 // } 
 /* 
 ******************
-THIS IS THE FUNCTION THAT FILLS THE BLANKS AFTER EACH SUCCESSFUL GUESS ------ GOOD!
+THIS IS THE FUNCTION THAT FILLS THE BLANKS AFTER EACH SUCCESSFUL GUESS
 ******************
 */
 
@@ -137,7 +154,6 @@ function findWin() {
     for (var i = 0; i < numGuesses; i++) {
         if (wordToGuess.toString() === maskedWord.toString()) {
             gameWon = true;
-            victories++;
             // alert("You won this game")
             console.log(kudos[victories])
             document.querySelector("#element_name").innerHTML= mysteryRevealed
@@ -145,31 +161,14 @@ function findWin() {
             // document.querySelector("#victories").innerHTML= victoryMessage
             return gameWon;
             break;
+            if (gameWon=true) {
+                victories++;
+            }
         }
     }
 }
 
-/* 
-******************
-THIS IS THE FUNCTION THAT COUNTS THE REMAINING GUESSES
-******************
-*/
 
-function counter() {
-    for (var l = 0; l<wordToGuess.length; l++) {
-        if (wordToGuess.indexOf(validChar) <0) {            
-            remainingGuesses--;
-            return remainingGuesses;
-            break;
-        }
-    }
-}
-
-/* 
-******************
-THIS IS THE FUNCTION THAT COUNTS THE REMAINING GUESSES
-******************
-*/
 
 
  
