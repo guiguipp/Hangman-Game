@@ -32,47 +32,81 @@ for (let i = 0; i < riddle.length; i++) {
 let wordToGuess = riddle.split("");
 
 // counting
+var tallyWins;
 var keyName;
-// var tallyGuesses;
 var gameWon = false;
 
 // number guesses allowed assigned to variable numGuesses (if word too small: less guesses)
-var numGuesses;
-if (riddle.length < 4) {
-    numGuesses = riddle.length + 2;
-} 
-else {
-    numGuesses = riddle.length + 5;
+var numGuesses
+function allGuesses(){
+    if (riddle.length < 4) {
+        numGuesses = riddle.length + 2;
+    } 
+    else {
+        numGuesses = riddle.length + 5;
+    }
+    return numGuesses;
+    document.querySelector("#num_guesses").innerHTML= numGuesses;
 }
+allGuesses()
 var remainingGuesses = numGuesses;
+
+function resetGame() {
+    randomHtml = htmlArray[Math.floor(Math.random()*htmlArray.length)];
+    riddle = randomHtml.name;
+    maskedWord = []; //resets the riddle
+    attemptedGuesses = [] //resets the number of guesses after each guessed word
+    for (let i = 0; i < riddle.length; i++) { //re-create the riddle
+        maskedWord[i] = " _ ";
+    }    
+    allGuesses()
+    let w3Link = "(click this <" + randomHtml.url + ">link</a> for more information)";
+    let mysteryRevealed = "The attribute to guess was: \"" + riddle + "\""; 
+    let victoryMessage = "You have won " + tallyWins + " game(s) so far. " + kudos[victories]; 
+    document.querySelector("#word_to_guess").innerHTML= maskedWord.join(" ")
+    document.querySelector("#num_guesses").innerHTML= numGuesses;
+
+    updateGameStats()
+    remainingGuesses = numGuesses;
+}
+
+function updateGameStats(){
+    gameWon = false;
+    tallyWins++;
+}
+
 
 document.querySelector("#element_definition").innerHTML= randomHtml.definition
 document.querySelector("#word_to_guess").innerHTML= maskedWord.join(" ")
 document.querySelector("#num_guesses").innerHTML= numGuesses;
 document.querySelector("#rem_guesses").innerHTML= remainingGuesses;
+document.querySelector("#element_type").innerHTML= randomHtml.type // tell it's HTML code
 
 
 document.onkeyup = function(event) {
     keyName = event.key;
     for (let i=0; i<remainingGuesses; i++) {
-        checkGuessValidity();
-        guessForTheWin();
-        findWin();
+            checkGuessValidity();
+            guessForTheWin();
+            if (maskedWord.indexOf(" _ ")<0) {
+                console.log("maskedWord.indexOf<0 verified")
+                gameWon = true;
+                
+                
+                resetGame();
+                break;
+            } else {            
+                guessForTheWin();
+            }
         }
-            
-
+    
     
     // Content to populate on main page
-    document.querySelector("#element_type").innerHTML= randomHtml.type
-    // document.querySelector("#victories").innerHTML= victoryMessage    
-    document.querySelector("#rem_guesses").innerHTML= remainingGuesses;
-    document.querySelector("#element_example").innerHTML= randomHtml.example
-    document.querySelector("#guesses").innerHTML= attemptedGuesses.join("-")
-
-// document.querySelector("#l_bracket").innerHTML= lBracket
-// document.querySelector("#r_bracket").innerHTML= rBracket
-
+    document.querySelector("#rem_guesses").innerHTML= remainingGuesses; // tell how many guesses remain
+    document.querySelector("#guesses").innerHTML= attemptedGuesses.join("-") // Show all guesses tried so far
+    document.querySelector("#element_example").innerHTML= randomHtml.example // show the response (should be when guessed)
 }
+
 /* 
 ******************
 THIS IS THE FUNCTION THAT CHECKS IF THE KEY IS A LEGIT CHARACTER, ADDS IT TO THE ARRAY OF  ------ GOOD!
@@ -135,21 +169,15 @@ THIS IS THE FUNCTION TO CHECK IF THE GAME HAS BEEN WON ------ GOOD!
 ******************
 */
 
-var tallyWins = 0;
-function findWin() {
-    for (var z = 0; z < remainingGuesses; z++) {
-        if (maskedWord.indexOf("_")<0) {
-            gameWon = true;
-        }
-    }
-}
-            // document.querySelector("#element_name").innerHTML= mysteryRevealed
-            // document.querySelector("#element_url").innerHTML= w3Link
-            // // document.querySelector("#victories").innerHTML= victoryMessage
-            // function resetGame() {
-            //     console.log("The Game is over, needs to be reset")
-    
-
+// var tallyWins = 0;
+// function findWin() {
+//     for (var z = 0; z < remainingGuesses; z++) {
+//         if (maskedWord.indexOf("_")<0) {
+//             gameWon = true;
+//         }
+//     }
+// }
+            
 
 /* THIS IS WORKING SO FAR!!
 NEED TO CREATE A LOOPING GAME, AND RESET */

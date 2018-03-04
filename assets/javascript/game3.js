@@ -37,27 +37,42 @@ var keyName;
 var gameWon = false;
 
 // number guesses allowed assigned to variable numGuesses (if word too small: less guesses)
-var numGuesses;
-if (riddle.length < 4) {
-    numGuesses = riddle.length + 2;
-} 
-else {
-    numGuesses = riddle.length + 5;
+var numGuesses
+function allGuesses(){
+    if (riddle.length < 4) {
+        numGuesses = riddle.length + 2;
+    } 
+    else {
+        numGuesses = riddle.length + 5;
+    }
+    return numGuesses;
+    document.querySelector("#num_guesses").innerHTML= numGuesses;
 }
+allGuesses()
 var remainingGuesses = numGuesses;
 
 function resetGame() {
     randomHtml = htmlArray[Math.floor(Math.random()*htmlArray.length)];
     riddle = randomHtml.name;
-    maskedWord = [];
-    for (let i = 0; i < riddle.length; i++) {
+    maskedWord = []; //resets the riddle
+    attemptedGuesses = [] //resets the number of guesses after each guessed word
+    for (let i = 0; i < riddle.length; i++) { //re-create the riddle
         maskedWord[i] = " _ ";
     }    
+    allGuesses()
+    let w3Link = "(click this <" + randomHtml.url + ">link</a> for more information)";
+    let mysteryRevealed = "The attribute to guess was: \"" + riddle + "\""; 
+    let victoryMessage = "You have won " + tallyWins + " game(s) so far. " + kudos[victories]; 
+    document.querySelector("#word_to_guess").innerHTML= maskedWord.join(" ")
+    document.querySelector("#num_guesses").innerHTML= numGuesses;
+
     updateGameStats()
+    remainingGuesses = numGuesses;
 }
+
 function updateGameStats(){
-    tallyWins++;
     gameWon = false;
+    tallyWins++;
 }
 
 
@@ -67,7 +82,6 @@ document.querySelector("#num_guesses").innerHTML= numGuesses;
 document.querySelector("#rem_guesses").innerHTML= remainingGuesses;
 document.querySelector("#element_type").innerHTML= randomHtml.type // tell it's HTML code
 
-resetGame()
 
 document.onkeyup = function(event) {
     keyName = event.key;
@@ -77,6 +91,8 @@ document.onkeyup = function(event) {
             if (maskedWord.indexOf(" _ ")<0) {
                 console.log("maskedWord.indexOf<0 verified")
                 gameWon = true;
+                
+                
                 resetGame();
                 break;
             } else {            
