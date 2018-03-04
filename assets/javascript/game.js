@@ -54,10 +54,26 @@ document.querySelector("#rem_guesses").innerHTML= remainingGuesses;
 document.onkeyup = function(event) {
     keyName = event.key;
     // including the function here allows it to run when key is pressed!!
-    checkGuessValidity();
-    guessForTheWin();
-    findWin();
+    // while (remainingGuesses>0) {
+        
+        while(remainingGuesses>0) {
+            checkGuessValidity();
+            guessForTheWin();
+            findWin()
+            if (gameWon = true) {
+                console.log("Setup another game");
+                break;
+            }
+             if (remainingGuesses = 0) {
+                console.log("Game is lost")
+            }
+        }
     
+    // checkGuessValidity();
+    // guessForTheWin();
+    // findWin();
+    
+
     
     // Content to populate on main page
     document.querySelector("#element_type").innerHTML= randomHtml.type
@@ -68,8 +84,8 @@ document.onkeyup = function(event) {
 
 // document.querySelector("#l_bracket").innerHTML= lBracket
 // document.querySelector("#r_bracket").innerHTML= rBracket
-
 }
+
 /* 
 ******************
 THIS IS THE FUNCTION THAT CHECKS IF THE KEY IS A LEGIT CHARACTER, ADDS IT TO THE ARRAY OF  ------ GOOD!
@@ -127,6 +143,7 @@ function findWin() {
             document.querySelector("#element_name").innerHTML= mysteryRevealed
             document.querySelector("#element_url").innerHTML= w3Link
             // document.querySelector("#victories").innerHTML= victoryMessage
+            return gameWon;
             break;
         }
     }
@@ -140,14 +157,10 @@ THIS IS THE FUNCTION THAT COUNTS THE REMAINING GUESSES
 
 function counter() {
     for (var l = 0; l<wordToGuess.length; l++) {
-        if (wordToGuess.indexOf(validChar) <0) {
-            
-            console.log("remainingGuesses before: " + remainingGuesses);
-            
+        if (wordToGuess.indexOf(validChar) <0) {            
             remainingGuesses--;
             return remainingGuesses;
             break;
-            console.log("remainingGuesses after: " + remainingGuesses);
         }
     }
 }
@@ -158,8 +171,5 @@ THIS IS THE FUNCTION THAT COUNTS THE REMAINING GUESSES
 ******************
 */
 
-function master() {
-    for (var p = 0; p<remainingGuesses.length; p++) {
 
-    }
-}
+ 
