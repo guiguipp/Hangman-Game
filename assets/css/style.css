@@ -1,3 +1,19 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+}
+p.def {
+  text-align: center;
+}
+#element_definition{
+  font-weight: bold;
+} 
+p.rid {
+  text-align: center;
+}
+#word_to_guess {
+  text-align: center;
+  font-size: 30px;
+}
 nav {
   height: 100px;
 }

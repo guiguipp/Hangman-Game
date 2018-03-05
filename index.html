@@ -18,18 +18,20 @@
 
 </nav>
 <div class="container">
-    <!-- main row for content -->
+    <!-- main row for the body content -->
     <div class="row">
+        <br>
         <!-- column to keep from left -->
         <div class="col-md-1">
         </div>
         <!-- main content -->
         <div class="col-md-6">
+            <br/>
             <div class="guessing_game">
-                <p>Which <span id="element_type"></span> attribute corresponds to this definition: <br>
-                    " <span id="element_definition"></span> "</p>
+                <p class="def">Which <span id="element_type"></span> attribute corresponds to this definition: <br>
+                    "<span id="element_definition"></span>"</p>
                     <br>
-                    <p><span id="word_to_guess"></span></p>
+                    <p class="rid"><span id="word_to_guess"></span></p>
                     <br>
                     <p>Letter guessed:<br>
                         <span id="guesses"></span>
@@ -39,7 +41,9 @@
             </div>
         </div>
         <!-- aside column (previous) -->
+        
         <div class="col-md-3">
+            <br>
             <div class="card" style="width: 18rem;">
                 <div class="card-header">
                     Attribute to guess was: 
@@ -55,23 +59,38 @@
                 </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">for more information <span id="link"></span></li>      
-                    </ul>
+                    </ul>    
+            </div>
+            <br/>
+            <br/>
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    Your report card:       
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><span id="kudos"></span><span id="suck"></span></p>
                 </div>
             </div>
         </div>
-        <!-- second row for table -->
-        <div class="row">
+    </div>
+
+    
+        
+    <br>
+    <br>    
+    <!-- second row for table -->
+    <div class="row">
         <!-- column to keep it from the left -->
-            <div class="col-md-1">
-
-            </div>    
-            <div class="col-md-6">
-
+        <div class="col-md-1">
+        </div>    
+        <div class="col-md-6">
+            <div class="row">
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
                         <th scope="col-2">Game Stats</th>
-                        <tr>
+                        <th scope="col-2"></th>
+                        </tr>
                     </thead>
                     <thead class="thead-light">
                         <tr>
@@ -90,12 +109,10 @@
                     </tbody>
                 </table>
             </div>
-           
         </div>
-        
-        </div>
-    </div>        
+    </div>
 </div>
+
 </body>
     <script src="assets/javascript/objects.js"></script>
     <script src="assets/javascript/game.js"></script>

@@ -6,8 +6,19 @@ const cssArray = [cssCharset, cssFontface, cssFontfeaturevalues, cssImport, cssK
 allowedChar= ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","-"];
 
 // Performance comment arrays
-const kudos = ["","Bravo","Well, that for sure looked easy", "Easy enough, huh?","GRrrreat","That one was a no-brainer...","Really?","Think you can do this again?","You are beating the Matrix!","Achievement unlocked: GOD LEVEL!!","Wow, you have to be a TA, aren't you?","...Parker, is it you?","STOP THIS, I'M BEAT!!!"]
-const sucker = ["Oops, sorry about that", "Hmm... that one was not obvious, try again!","I am sending you a picture of a kitty, for your trouble...","Were you paying attention?","Ok, wanna cry?","Ready to give up?","You have to be good at something else, right...?","Really?", "I expected better. I am soooo disappointed","Should I dumb it down for you?","Here is a hing: the next one is not something you know. Because, well, you don't know much obviously..."]
+const kudos = ["","Bravo!","Well, that for sure looked easy ;-)", "Easy enough, huh?","GRrrreat!!","That one was a no-brainer...","Really?","Think you can do this again?","You are beating the Matrix!","Achievement unlocked: GOD LEVEL!!","Wow, you have to be a TA, aren't you?","...Parker, is it you?","STOP THIS, I'M BEAT!!!"]
+const sucker = ["","Oops, sorry about that", "Hmm... that one was not obvious, try again!","I am sending you a picture of a kitty, for your trouble...","Were you paying attention?","Ok, wanna cry?","Ready to give up?","You have to be good at something else, right...?","Really?", "I expected better. I am soooo disappointed","Should I dumb it down for you?","Here is a hing: the next one is not something you know. Because, well, you don't know much obviously..."]
+
+// var kudosMes;
+//  for (let i = 0;i<kudos.length+1;i++){
+//      if (i<kudos.length){
+//          kudosMes=kudos[i];
+//      }
+//      if(i=kudos.length) {
+//          kudosMes=kudos[kudos.length]
+//      }
+//      return kudosMes;
+//  }
 
 // random Arrays
 let randomHtml = htmlArray[Math.floor(Math.random()*htmlArray.length)];
@@ -19,9 +30,7 @@ let previousRiddle=[];
 
 
 // Text on main page 
-// let w3Link = "(click this <" + previousRiddle.url + ">link</a> for more information)";
 let mysteryRevealed = "The attribute to guess was: \"" + riddle + "\""; 
-// let victoryMessage = "You have won " + tallyWins + " game(s) so far. " + kudos[tallyWins]; 
 
 
 // let hiddenChar = " _ "
@@ -36,6 +45,8 @@ let wordToGuess = riddle.split("");
 // counting
 var tallyWins = 0;
 var tallyLosses = 0;
+var streakWins = 0;
+var streakLosses = 0;
 var keyName;
 var gameWon = false;
 
@@ -46,7 +57,7 @@ function allGuesses(){
         numGuesses = riddle.length + 2;
     } 
     else {
-        numGuesses = riddle.length + 5;
+        numGuesses = riddle.length + 3;
     }
     return numGuesses;
     document.querySelector("#num_guesses").innerHTML= numGuesses;
@@ -63,8 +74,6 @@ function resetGame() {
         maskedWord[i] = " _ ";
     }    
     allGuesses()
-    // let mysteryRevealed = "The attribute to guess was: \"" + riddle + "\""; 
-    // let victoryMessage = "You have won " + tallyWins + " game(s) so far. " + kudos[tallyWins]; 
     document.querySelector("#word_to_guess").innerHTML= maskedWord.join(" ")
     document.querySelector("#num_guesses").innerHTML= numGuesses;
     document.querySelector("#element_definition").innerHTML= randomHtml.definition
@@ -72,7 +81,10 @@ function resetGame() {
     document.querySelector("#tally_losses").innerHTML= tallyLosses
     document.querySelector("#element_example").innerHTML= previousRiddle.example // show the response (should be when guessed)
     document.querySelector("#link").innerHTML= "(click this <" + previousRiddle.url + ">link</a> for more information)";
+    document.querySelector("#kudos").innerHTML= kudos[streakWins];
+    document.querySelector("#suck").innerHTML= sucker[streakLosses];
 
+    
     updateGameStats()
     remainingGuesses = numGuesses;
 }
@@ -98,9 +110,10 @@ document.onkeyup = function(event) {
         guessForTheWin();
         // gameLost()
         if (maskedWord.indexOf(" _ ")<0) {
-            console.log("maskedWord.indexOf<0 verified")
             gameWon = true;
             tallyWins++;
+            streakWins++;
+            streakLosses=0;
             previousRiddle=randomHtml;
             resetGame();
             break;
@@ -108,8 +121,9 @@ document.onkeyup = function(event) {
         else {            
             guessForTheWin();
             if(remainingGuesses===0 && gameWon === false) {
-                // gameLost()
                 tallyLosses++;
+                streakLosses++;
+                streakWins=0;
                 previousRiddle=randomHtml;
                 resetGame();
                 break;
@@ -152,11 +166,9 @@ THIS IS THE FUNCTION THAT COUNTS THE REMAINING GUESSES
 function counter() {
     for (var l = 0; l<wordToGuess.length; l++) {
         if (wordToGuess.indexOf(validChar) <0) {
-            console.log("remainingGuesses before: " + remainingGuesses);
             remainingGuesses--;
             return remainingGuesses;
             break;
-            console.log("remainingGuesses after: " + remainingGuesses);
         }
     }
 }
