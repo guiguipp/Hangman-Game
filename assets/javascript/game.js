@@ -15,12 +15,14 @@ let randomCss = cssArray[Math.floor(Math.random()*cssArray.length)];
 
 // show me the name (aka: the word to guess)
 let riddle = randomHtml.name;
+let previousRiddle=[];
 
 
 // Text on main page 
-let w3Link = "(click this <" + randomHtml.url + ">link</a> for more information)";
+// let w3Link = "(click this <" + previousRiddle.url + ">link</a> for more information)";
 let mysteryRevealed = "The attribute to guess was: \"" + riddle + "\""; 
-let victoryMessage = "You have won " + victories + " game(s) so far. " + kudos[victories]; 
+// let victoryMessage = "You have won " + tallyWins + " game(s) so far. " + kudos[tallyWins]; 
+
 
 // let hiddenChar = " _ "
 let maskedWord = [];
@@ -61,12 +63,15 @@ function resetGame() {
         maskedWord[i] = " _ ";
     }    
     allGuesses()
-    let w3Link = "(click this <" + randomHtml.url + ">link</a> for more information)";
-    let mysteryRevealed = "The attribute to guess was: \"" + riddle + "\""; 
-    let victoryMessage = "You have won " + tallyWins + " game(s) so far. " + kudos[victories]; 
+    // let mysteryRevealed = "The attribute to guess was: \"" + riddle + "\""; 
+    // let victoryMessage = "You have won " + tallyWins + " game(s) so far. " + kudos[tallyWins]; 
     document.querySelector("#word_to_guess").innerHTML= maskedWord.join(" ")
     document.querySelector("#num_guesses").innerHTML= numGuesses;
     document.querySelector("#element_definition").innerHTML= randomHtml.definition
+    document.querySelector("#tally_wins").innerHTML= tallyWins
+    document.querySelector("#tally_losses").innerHTML= tallyLosses
+    document.querySelector("#element_example").innerHTML= previousRiddle.example // show the response (should be when guessed)
+    document.querySelector("#link").innerHTML= "(click this <" + previousRiddle.url + ">link</a> for more information)";
 
     updateGameStats()
     remainingGuesses = numGuesses;
@@ -82,6 +87,8 @@ document.querySelector("#word_to_guess").innerHTML= maskedWord.join(" ")
 document.querySelector("#num_guesses").innerHTML= numGuesses;
 document.querySelector("#rem_guesses").innerHTML= remainingGuesses;
 document.querySelector("#element_type").innerHTML= randomHtml.type // tell it's HTML code
+document.querySelector("#tally_wins").innerHTML= tallyWins
+document.querySelector("#tally_losses").innerHTML= tallyLosses
 
 
 document.onkeyup = function(event) {
@@ -94,6 +101,7 @@ document.onkeyup = function(event) {
             console.log("maskedWord.indexOf<0 verified")
             gameWon = true;
             tallyWins++;
+            previousRiddle=randomHtml;
             resetGame();
             break;
         }
@@ -102,6 +110,7 @@ document.onkeyup = function(event) {
             if(remainingGuesses===0 && gameWon === false) {
                 // gameLost()
                 tallyLosses++;
+                previousRiddle=randomHtml;
                 resetGame();
                 break;
             }
@@ -112,7 +121,6 @@ document.onkeyup = function(event) {
     // Content to populate on main page
     document.querySelector("#rem_guesses").innerHTML= remainingGuesses; // tell how many guesses remain
     document.querySelector("#guesses").innerHTML= attemptedGuesses.join("-") // Show all guesses tried so far
-    document.querySelector("#element_example").innerHTML= randomHtml.example // show the response (should be when guessed)
 }
 
 /* 

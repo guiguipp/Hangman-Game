@@ -20,7 +20,7 @@ let riddle = randomHtml.name;
 // Text on main page 
 let w3Link = "(click this <" + randomHtml.url + ">link</a> for more information)";
 let mysteryRevealed = "The attribute to guess was: \"" + riddle + "\""; 
-let victoryMessage = "You have won " + victories + " game(s) so far. " + kudos[victories]; 
+let victoryMessage = "You have won " + tallyWins + " game(s) so far. " + kudos[tallyWins]; 
 
 // let hiddenChar = " _ "
 let maskedWord = [];
@@ -61,9 +61,9 @@ function resetGame() {
         maskedWord[i] = " _ ";
     }    
     allGuesses()
-    let w3Link = "(click this <" + randomHtml.url + ">link</a> for more information)";
-    let mysteryRevealed = "The attribute to guess was: \"" + riddle + "\""; 
-    let victoryMessage = "You have won " + tallyWins + " game(s) so far. " + kudos[victories]; 
+    // let w3Link = "(click this <" + randomHtml.url + ">link</a> for more information)";
+    // let mysteryRevealed = "The attribute to guess was: \"" + riddle + "\""; 
+    // let victoryMessage = "You have won " + tallyWins + " game(s) so far. " + kudos[tallyWins]; 
     document.querySelector("#word_to_guess").innerHTML= maskedWord.join(" ")
     document.querySelector("#num_guesses").innerHTML= numGuesses;
     document.querySelector("#element_definition").innerHTML= randomHtml.definition

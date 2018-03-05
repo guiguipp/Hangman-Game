@@ -5,37 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <title>The Great Coding Flashcard Game</title>
 </head>
 <body>
 
 <!-- header (credit to: https://css-tricks.com/snippets/css/typewriter-effect/) -->
-        <pre id="typewriter">
-                <span class="var-highlight">the</span> = {<span class="string-highlight">ultimate</span> coding <span class="string-highlight">flashcard</span> game}; </pre>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <pre id="typewriter">
+            <span class="var-highlight">the</span> = {<span class="string-highlight">ultimate</span> coding <span class="string-highlight">flashcard</span> game}; </pre>
 
-    <br>
-    <p><span id="element_type"></span> attribute to guess: <span id="word_to_guess"></span></p>
-    <p>Definition: <span id="element_definition"></span></p>
-    <p><span id="victories"></span></p>
-    <p><span id="element_name"></span> <span id="element_url"></a></span></p>
-    <div class="box">
-        <p class="example">
-            <!-- <span class="l_bracket"></span> -->
-            <span class="bracket">&lt;</span>
-            <span id="element_example"></span>
-            <span class="bracket">&gt;</span>
-            <!-- <span class="r_bracket"></span> -->
-        </p>
-    </div>
-    
-<!-- Game -->
-<p>Your guesses: <span id="guesses"></span></p>    
-<p>numGuesses: <span id="num_guesses"></span></p> 
-<p>remainingGuesses: <span id="rem_guesses"></span></p>
+</nav>
+<div class="container">
+    <!-- main row for content -->
+    <div class="row">
+        <!-- column to keep from left -->
+        <div class="col-md-1">
+        </div>
+        <!-- main content -->
+        <div class="col-md-6">
+            <div class="guessing_game">
+                <p>Which <span id="element_type"></span> attribute corresponds to this definition: <br>
+                    " <span id="element_definition"></span> "</p>
+                    <br>
+                    <p><span id="word_to_guess"></span></p>
+                    <br>
+                    <p>Letter guessed:<br>
+                        <span id="guesses"></span>
+                    </p>
+                    <br>
+                    <br>
+            </div>
+        </div>
+        <!-- aside column (previous) -->
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    Attribute to guess was: 
+                    <div class="box">
+                        <p class="example">
+                            <!-- <span class="l_bracket"></span> -->
+                            <span class="bracket">&lt;</span>
+                            <span id="element_example"></span>
+                            <span class="bracket">&gt;</span>
+                            <!-- <span class="r_bracket"></span> -->
+                        </p>
+                    </div>
+                </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">for more information <span id="link"></span></li>      
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- second row for table -->
+        <div class="row">
+        <!-- column to keep it from the left -->
+            <div class="col-md-1">
 
+            </div>    
+            <div class="col-md-6">
 
-    </body>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                        <th scope="col-2">Game Stats</th>
+                        <tr>
+                    </thead>
+                    <thead class="thead-light">
+                        <tr>
+                        <th scope="col">This Game</th>
+                        <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>Guesses allowed: <span id="num_guesses"></span></td>
+                        <td>Wins: <span id="tally_wins"></span></td>
+                        </tr>
+                        <tr>
+                        <td>Remaining guesses: <span id="rem_guesses"></span></td>
+                        <td>Losses: <span id="tally_losses"></span></td>
+                    </tbody>
+                </table>
+            </div>
+           
+        </div>
+        
+        </div>
+    </div>        
+</div>
+</body>
     <script src="assets/javascript/objects.js"></script>
-    <script src="assets/javascript/game3.js"></script>
+    <script src="assets/javascript/game.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </html>
