@@ -135,6 +135,7 @@ document.onkeyup = function(event) {
     // Content to populate on main page
     document.querySelector("#rem_guesses").innerHTML= remainingGuesses; // tell how many guesses remain
     document.querySelector("#guesses").innerHTML= attemptedGuesses.join("-") // Show all guesses tried so far
+
 }
 
 /* 

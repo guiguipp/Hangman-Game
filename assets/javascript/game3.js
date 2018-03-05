@@ -57,7 +57,7 @@ function allGuesses(){
         numGuesses = riddle.length + 2;
     } 
     else {
-        numGuesses = riddle.length-1;
+        numGuesses = riddle.length;
     }
     return numGuesses;
     document.querySelector("#num_guesses").innerHTML= numGuesses;
@@ -94,7 +94,7 @@ function updateGameStats(){
 }
 
 
-document.querySelector("#element_definition").innerHTML= randomCss.definition
+document.querySelector("#element_definition").innerHTML= randomHtml.definition
 document.querySelector("#word_to_guess").innerHTML= maskedWord.join(" ")
 document.querySelector("#num_guesses").innerHTML= numGuesses;
 document.querySelector("#rem_guesses").innerHTML= remainingGuesses;
