@@ -14,6 +14,8 @@ p.rid {
   text-align: center;
   font-size: 30px;
 }
+
+
 nav {
   height: 100px;
 }
@@ -30,6 +32,14 @@ div.box {
     background-color: black;
     width: 200px;
     height: 100px;
+}
+div.css_box {
+  background-color: black;
+    width: 200px;
+    height: 100px;
+}
+div.css_box>p {
+  padding-top: 10px;
 }
 /* header css (credit to: https://css-tricks.com/snippets/css/typewriter-effect/) */
 .var-highlight {
