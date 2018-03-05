@@ -32,7 +32,8 @@ for (let i = 0; i < riddle.length; i++) {
 let wordToGuess = riddle.split("");
 
 // counting
-var tallyWins;
+var tallyWins = 0;
+var tallyLosses = 0;
 var keyName;
 var gameWon = false;
 
@@ -65,6 +66,7 @@ function resetGame() {
     let victoryMessage = "You have won " + tallyWins + " game(s) so far. " + kudos[victories]; 
     document.querySelector("#word_to_guess").innerHTML= maskedWord.join(" ")
     document.querySelector("#num_guesses").innerHTML= numGuesses;
+    document.querySelector("#element_definition").innerHTML= randomHtml.definition
 
     updateGameStats()
     remainingGuesses = numGuesses;
@@ -72,7 +74,6 @@ function resetGame() {
 
 function updateGameStats(){
     gameWon = false;
-    tallyWins++;
 }
 
 
@@ -86,20 +87,27 @@ document.querySelector("#element_type").innerHTML= randomHtml.type // tell it's 
 document.onkeyup = function(event) {
     keyName = event.key;
     for (let i=0; i<remainingGuesses; i++) {
-            checkGuessValidity();
+        checkGuessValidity();
+        guessForTheWin();
+        // gameLost()
+        if (maskedWord.indexOf(" _ ")<0) {
+            console.log("maskedWord.indexOf<0 verified")
+            gameWon = true;
+            tallyWins++;
+            resetGame();
+            break;
+        }
+        else {            
             guessForTheWin();
-            if (maskedWord.indexOf(" _ ")<0) {
-                console.log("maskedWord.indexOf<0 verified")
-                gameWon = true;
-                
-                
+            if(remainingGuesses===0 && gameWon === false) {
+                // gameLost()
+                tallyLosses++;
                 resetGame();
                 break;
-            } else {            
-                guessForTheWin();
+            }
             }
         }
-    
+
     
     // Content to populate on main page
     document.querySelector("#rem_guesses").innerHTML= remainingGuesses; // tell how many guesses remain
@@ -163,25 +171,5 @@ function guessForTheWin () {
         }
     }
 }
-/* 
-******************
-THIS IS THE FUNCTION TO CHECK IF THE GAME HAS BEEN WON ------ GOOD!
-******************
-*/
-
-// var tallyWins = 0;
-// function findWin() {
-//     for (var z = 0; z < remainingGuesses; z++) {
-//         if (maskedWord.indexOf("_")<0) {
-//             gameWon = true;
-//         }
-//     }
-// }
-            
-
-/* THIS IS WORKING SO FAR!!
-NEED TO CREATE A LOOPING GAME, AND RESET */
-
-
 
  
