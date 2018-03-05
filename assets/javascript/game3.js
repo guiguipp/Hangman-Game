@@ -3,7 +3,7 @@ const htmlArray =[a, abbr, address, area, article, aside, audio, b, base, bdi, b
 const cssArray = [cssCharset, cssFontface, cssFontfeaturevalues, cssImport, cssKeyframes, cssMedia, cssAligncontent, cssAlignitems, cssAlignself, cssAll, cssAnimation, cssAnimationdelay, cssAnimationdirection, cssAnimationduration, cssAnimationfillmode, cssAnimationiterationcount, cssAnimationname, cssAnimationplaystate, cssAnimationtimingfunction, cssBackfacevisibility, cssBackground, cssBackgroundblendmode, cssBackgroundattachment, cssBackgroundclip, cssBackgroundcolor, cssBackgroundimage, cssBackgroundorigin, cssBackgroundposition, cssBackgroundrepeat, cssBackgroundsize, cssBorder, cssBorderbottom, cssBorderbottomcolor, cssBorderbottomleftradius, cssBorderbottomrightradius, cssBorderbottomstyle, cssBorderbottomwidth, cssBordercollapse, cssBordercolor, cssBorderimage, cssBorderimageoutset, cssBorderimagerepeat, cssBorderimageslice, cssBorderimagesource, cssBorderimagewidth, cssBorderleft, cssBorderleftcolor, cssBorderleftstyle, cssBorderleftwidth, cssBorderradius, cssBorderright, cssBorderrightcolor, cssBorderrightstyle, cssBorderrightwidth, cssBorderspacing, cssBorderstyle, cssBordertop, cssBordertopcolor, cssBordertopleftradius, cssBordertoprightradius, cssBordertopstyle, cssBordertopwidth, cssBorderwidth, cssBottom, cssBoxdecorationbreak, cssBoxshadow, cssBoxsizing, cssBreakafter, cssBreakbefore, cssBreakinside, cssCaptionside, cssCaretcolor, cssClear, cssClip, cssColor, cssColumncount, cssColumnfill, cssColumngap, cssColumnrule, cssColumnrulecolor, cssColumnrulestyle, cssColumnrulewidth, cssColumnspan, cssColumnwidth, cssColumns, cssContent, cssCounterincrement, cssCounterreset, cssCursor, cssDirection, cssDisplay, cssEmptycells, cssFilter, cssFlex, cssFlexbasis, cssFlexdirection, cssFlexflow, cssFlexgrow, cssFlexshrink, cssFlexwrap, cssFloat, cssFont, cssFontfamily, cssFontfeaturesettings,cssFontkerning, cssFontlanguageoverride, cssFontsize, cssFontsizeadjust, cssFontstretch, cssFontstyle, cssFontsynthesis, cssFontvariant, cssFontvariantalternates, cssFontvariantcaps, cssFontvarianteastasian, cssFontvariantligatures, cssFontvariantnumeric, cssFontvariantposition, cssFontweight, cssGrid, cssGridarea, cssGridautocolumns, cssGridautoflow, cssGridautorows, cssGridcolumn, cssGridcolumnend, cssGridcolumngap, cssGridcolumnstart, cssGridgap, cssGridrow, cssGridrowend, cssGridrowgap, cssGridrowstart, cssGridtemplate, cssGridtemplateareas, cssGridtemplatecolumns, cssGridtemplaterows, cssHangingpunctuation, cssHeight, cssHyphens, cssImageorientation, cssImagerendering, cssImageresolution, cssJustifycontent, cssLeft, cssLetterspacing, cssLinebreak, cssLineheight, cssListstyle, cssListstyleimage, cssListstyleposition, cssListstyletype, cssMargin, cssMarginbottom, cssMarginright, cssMarginleft, cssMargintop, cssMaxheight, cssMaxwidth, cssMinheight, cssMinwidth, cssObjectfit, cssObjectposition, cssOpacity, cssOrder, cssOrphans, cssOutline, cssOutlinecolor, cssOutlineoffset, cssOutlinestyle, cssOutlinewidth, cssOverflow, cssOverflowwrap, cssOverflowx, cssOverflowy, cssPadding, cssPaddingbottom, cssPaddingleft, cssPaddingright, cssPaddingtop, cssPagebreakafter, cssPagebreakbefore, cssPagebreakinside, cssPerspective, cssPerspectiveorigin, cssPosition, cssQuotes, cssResize, cssRight, cssTabsize, cssTablelayout, cssTextalign, cssTextalignlast, cssTextcombineupright, cssTextdecorationcolor, cssTextdecoration, cssTextdecorationline, cssTextdecorationstyle, cssTextindent, cssTextjustify, cssTextorientation, cssTextoverflow, cssTextshadow, cssTexttransform, cssTextunderlineposition, cssTop, cssTransform, cssTransformorigin, cssTransformstyle, cssTransition, cssTransitiondelay, cssTransitionduration, cssTransitionproperty, cssTransitiontimingfunction, cssUnicodebidi, cssUserselect, cssVerticalalign, cssVisibility, cssWhitespace, cssWidows, cssWidth, cssWordbreak, cssWordspacing, cssWordwrap, cssZindex];
 
 // Allowed Characters array
-allowedChar= ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","-"];
+allowedChar= ["@","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","-"];
 
 // Performance comment arrays
 const kudos = ["","Bravo!","Well, that for sure looked easy ;-)", "Easy enough, huh?","GRrrreat!!","That one was a no-brainer...","Really?","Think you can do this again?","You are beating the Matrix!","Achievement unlocked: GOD LEVEL!!","Wow, you have to be a TA, aren't you?","...Parker, is it you?","STOP THIS, I'M BEAT!!!"]
@@ -66,10 +66,10 @@ allGuesses()
 var remainingGuesses = numGuesses;
 
 function resetGame() {
+    attemptedGuesses = [] //resets the number of guesses after each guessed word
+    maskedWord = []; //resets the riddle
     randomCss = cssArray[Math.floor(Math.random()*cssArray.length)];
     riddle = randomCss.name;
-    maskedWord = []; //resets the riddle
-    attemptedGuesses = [] //resets the number of guesses after each guessed word
     for (let i = 0; i < riddle.length; i++) { //re-create the riddle
         maskedWord[i] = " _ ";
     }    
@@ -84,7 +84,6 @@ function resetGame() {
     document.querySelector("#kudos").innerHTML= kudos[streakWins];
     document.querySelector("#suck").innerHTML= sucker[streakLosses];
 
-    
     updateGameStats()
     remainingGuesses = numGuesses;
 }
@@ -94,7 +93,7 @@ function updateGameStats(){
 }
 
 
-document.querySelector("#element_definition").innerHTML= randomHtml.definition
+document.querySelector("#element_definition").innerHTML= randomCss.definition
 document.querySelector("#word_to_guess").innerHTML= maskedWord.join(" ")
 document.querySelector("#num_guesses").innerHTML= numGuesses;
 document.querySelector("#rem_guesses").innerHTML= remainingGuesses;
