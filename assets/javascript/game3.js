@@ -57,7 +57,7 @@ function allGuesses(){
         numGuesses = riddle.length + 2;
     } 
     else {
-        numGuesses = riddle.length;
+        numGuesses = riddle.length-1;
     }
     return numGuesses;
     document.querySelector("#num_guesses").innerHTML= numGuesses;
