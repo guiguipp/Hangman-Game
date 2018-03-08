@@ -9,16 +9,30 @@ allowedChar= ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q
 const kudos = ["","Bravo!","Well, that for sure looked easy ;-)", "Easy enough, huh?","GRrrreat!!","That one was a no-brainer...","Really?","Think you can do this again?","You are beating the Matrix!","Achievement unlocked: GOD LEVEL!!","Wow, you have to be a TA, aren't you?","...Parker, is it you?","STOP THIS, I'M BEAT!!!"]
 const sucker = ["","Oops, sorry about that", "Hmm... that one was not obvious, try again!","I am sending you a picture of a kitty, for your trouble...","Were you paying attention?","Ok, wanna cry?","Ready to give up?","You have to be good at something else, right...?","Really?", "I expected better. I am soooo disappointed","Should I dumb it down for you?","Here is a hing: the next one is not something you know. Because, well, you don't know much obviously..."]
 
-// var kudosMes;
-//  for (let i = 0;i<kudos.length+1;i++){
-//      if (i<kudos.length){
-//          kudosMes=kudos[i];
-//      }
-//      if(i=kudos.length) {
-//          kudosMes=kudos[kudos.length]
-//      }
-//      return kudosMes;
-//  }
+var kudosMes;
+var suckMes;    
+function yeah() {
+    for(let i=0; i<streakWins;i++) {
+        if (streakWins < kudos.length) {
+            kudosMes=kudos[i];
+        }
+        else {
+               kudosMes=kudos[kudos.length-1]
+        }       
+    }    
+    return kudosMes;
+}
+function neah() {
+    for(let i=0; i<streakLosses;i++) {
+        if (streakLosses < sucker.length) {
+            suckMes=sucker[i];
+        }
+        else {
+            suckMes=sucker[sucker.length-1]
+        }       
+    }    
+    return suckMes;
+}
 
 // random Arrays
 let randomHtml = htmlArray[Math.floor(Math.random()*htmlArray.length)];
@@ -65,6 +79,7 @@ function allGuesses(){
 allGuesses()
 var remainingGuesses = numGuesses;
 
+// function to reset the game
 function resetGame() {
     randomHtml = htmlArray[Math.floor(Math.random()*htmlArray.length)];
     riddle = randomHtml.name;
@@ -108,12 +123,16 @@ document.onkeyup = function(event) {
     for (let i=0; i<remainingGuesses; i++) {
         checkGuessValidity();
         guessForTheWin();
-        // gameLost()
         if (maskedWord.indexOf(" _ ")<0) {
             gameWon = true;
             tallyWins++;
             streakWins++;
+            yeah()
+            document.querySelector("#kudos").innerHTML= kudosMes;
+            suckMes="";
             streakLosses=0;
+            neah()
+            document.querySelector("#suck").innerHTML= suckMes;
             previousRiddle=randomHtml;
             resetGame();
             break;
@@ -123,14 +142,18 @@ document.onkeyup = function(event) {
             if(remainingGuesses===0 && gameWon === false) {
                 tallyLosses++;
                 streakLosses++;
+                neah()
+                document.querySelector("#suck").innerHTML= suckMes;
                 streakWins=0;
+                kudosMes=""
+                yeah()
+                document.querySelector("#kudos").innerHTML= kudosMes;
                 previousRiddle=randomHtml;
                 resetGame();
                 break;
             }
             }
         }
-
     
     // Content to populate on main page
     document.querySelector("#rem_guesses").innerHTML= remainingGuesses; // tell how many guesses remain

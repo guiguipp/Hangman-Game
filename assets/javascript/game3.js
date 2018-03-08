@@ -6,13 +6,12 @@ const cssArray = [cssCharset, cssFontface, cssFontfeaturevalues, cssImport, cssK
 allowedChar= ["@","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","-"];
 
 // Performance comment arrays
-const kudos = ["","Bravo!","Well, that for sure looked easy ;-)", "Easy enough, huh?","GRrrreat!!","That one was a no-brainer...","Really?","Think you can do this again?","You are beating the Matrix!","Achievement unlocked: GOD LEVEL!!","Wow, you have to be a TA, aren't you?","...Parker, is it you?","STOP THIS, I'M BEAT!!!"]
-const sucker = ["","Oops, sorry about that", "Hmm... that one was not obvious, try again!","I am sending you a picture of a kitty, for your trouble...","Were you paying attention?","Ok, wanna cry?","Ready to give up?","You have to be good at something else, right...?","Really?", "I expected better. I am soooo disappointed","Should I dumb it down for you?","Here is a hing: the next one is not something you know. Because, well, you don't know much obviously..."]
+const kudos = ["Bravo!","Well, that for sure looked easy ;-)", "Easy enough, huh?","GRrrreat!!","That one was a no-brainer...","Really?","Think you can do this again?","You are beating the Matrix!","Achievement unlocked: GOD LEVEL!!","Wow, you have to be a TA, aren't you?","...Parker, is it you?","STOP THIS, I'M BEAT!!!"]
+const sucker = ["Oops, sorry about that", "Hmm... that one was not obvious, try again!","I am sending you a picture of a kitty, for your trouble...","Were you paying attention?","Ok, wanna cry?","Ready to give up?","You have to be good at something else, right...?","Really?", "I expected better. I am soooo disappointed","Should I dumb it down for you?","Here is a hing: the next one is not something you know. Because, well, you don't know much obviously..."]
 var kudosMes;
-var suckMes;
+var suckMes;    
 function yeah() {
-    suckMes=sucker[0];
-    for(var i=0; i<streakWins;i++) {
+    for(let i=0; i<streakWins;i++) {
         if (streakWins < kudos.length) {
             kudosMes=kudos[i];
         }
@@ -23,18 +22,16 @@ function yeah() {
     return kudosMes;
 }
 function neah() {
-    kudosMes=kudos[0];
-    for(var i=0; i<streakLosses;i++) {
-        if (streakLosses < kudos.length) {
-            suckMes=kudos[i];
+    for(let i=0; i<streakLosses;i++) {
+        if (streakLosses < sucker.length) {
+            suckMes=sucker[i];
         }
         else {
-            suckMes=kudos[kudos.length-1]
+            suckMes=sucker[sucker.length-1]
         }       
     }    
     return suckMes;
 }
-
 // random Arrays
 let randomHtml = htmlArray[Math.floor(Math.random()*htmlArray.length)];
 let randomCss = cssArray[Math.floor(Math.random()*cssArray.length)];
@@ -80,6 +77,7 @@ function allGuesses(){
 allGuesses()
 var remainingGuesses = numGuesses;
 
+// function to reset the game
 function resetGame() {
     attemptedGuesses = [] //resets the number of guesses after each guessed word
     maskedWord = []; //resets the riddle
@@ -87,7 +85,8 @@ function resetGame() {
     riddle = randomCss.name;
     for (let i = 0; i < riddle.length; i++) { //re-create the riddle
         maskedWord[i] = " _ ";
-    }    
+    }
+
     allGuesses()
     document.querySelector("#word_to_guess").innerHTML= maskedWord.join(" ")
     document.querySelector("#num_guesses").innerHTML= numGuesses;
@@ -96,9 +95,6 @@ function resetGame() {
     document.querySelector("#tally_losses").innerHTML= tallyLosses
     document.querySelector("#element_example").innerHTML= previousRiddle.name // show the response (should be when guessed)
     document.querySelector("#link").innerHTML= "(click this <" + previousRiddle.url + ">link</a> for more information)";
-    document.querySelector("#kudos").innerHTML= kudosMes;
-    document.querySelector("#suck").innerHTML= suckMes;
-
     updateGameStats()
     remainingGuesses = numGuesses;
 }
@@ -122,14 +118,16 @@ document.onkeyup = function(event) {
     for (let i=0; i<remainingGuesses; i++) {
         checkGuessValidity();
         guessForTheWin();
-        // gameLost()
         if (maskedWord.indexOf(" _ ")<0) {
             gameWon = true;
             tallyWins++;
             streakWins++;
+            yeah()
+            document.querySelector("#kudos").innerHTML= kudosMes;
+            suckMes="";
             streakLosses=0;
-        yeah()
-        neah()
+            neah()
+            document.querySelector("#suck").innerHTML= suckMes;
             previousRiddle=randomCss;
             resetGame();
             break;
@@ -139,7 +137,12 @@ document.onkeyup = function(event) {
             if(remainingGuesses===0 && gameWon === false) {
                 tallyLosses++;
                 streakLosses++;
+                neah()
+                document.querySelector("#suck").innerHTML= suckMes;
                 streakWins=0;
+                kudosMes=""
+                yeah()
+                document.querySelector("#kudos").innerHTML= kudosMes;
                 previousRiddle=randomCss;
                 resetGame();
                 break;
