@@ -5,9 +5,9 @@ const cssArray = [cssCharset, cssFontface, cssFontfeaturevalues, cssImport, cssK
 // Allowed Characters array
 allowedChar= ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","-"];
 
-// Performance comment arrays
-const kudos = ["","Bravo!","Well, that for sure looked easy ;-)", "Easy enough, huh?","GRrrreat!!","That one was a no-brainer...","Really?","Think you can do this again?","You are beating the Matrix!","Achievement unlocked: GOD LEVEL!!","Wow, you have to be a TA, aren't you?","...Parker, is it you?","STOP THIS, I'M BEAT!!!"]
-const sucker = ["","Oops, sorry about that", "Hmm... that one was not obvious, try again!","I am sending you a picture of a kitty, for your trouble...","Were you paying attention?","Ok, wanna cry?","Ready to give up?","You have to be good at something else, right...?","Really?", "I expected better. I am soooo disappointed","Should I dumb it down for you?","Here is a hing: the next one is not something you know. Because, well, you don't know much obviously..."]
+// Performance comment arrays and functions
+const kudos = ["Bravo!","Well, that for sure looked easy ;-)", "Easy enough, huh?","GRrrreat!!","That one was a no-brainer...","Really?","Think you can do this again?","You are beating the Matrix!","Achievement unlocked: GOD LEVEL!!","Wow, you have to be a TA, aren't you?","...Parker, is it you?","STOP THIS, I'M BEAT!!!"]
+const sucker = ["Oops, sorry about that", "Hmm... that one was not obvious, try again!","I am sending you a picture of a kitty, for your trouble...","Were you paying attention?","Ok, wanna cry?","Ready to give up?","You have to be good at something else, right...?","Really?", "I expected better. I am soooo disappointed","Should I dumb it down for you?","Here is a hing: the next one is not something you know. Because, well, you don't know much obviously..."]
 
 var kudosMes;
 var suckMes;    
@@ -96,10 +96,6 @@ function resetGame() {
     document.querySelector("#tally_losses").innerHTML= tallyLosses
     document.querySelector("#element_example").innerHTML= previousRiddle.example // show the response (should be when guessed)
     document.querySelector("#link").innerHTML= "(click this <" + previousRiddle.url + ">link</a> for more information)";
-    document.querySelector("#kudos").innerHTML= kudos[streakWins];
-    document.querySelector("#suck").innerHTML= sucker[streakLosses];
-
-    
     updateGameStats()
     remainingGuesses = numGuesses;
 }
